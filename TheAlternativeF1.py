@@ -6,7 +6,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 import plotly.express as px
-import Sidebar, Functions, HomePage, Season
+import Sidebar, Functions, HomePage, Season, ConstructorAllTime
 
 ## ----- App Format ----- ##
 st.set_page_config(layout="wide") 
@@ -24,6 +24,10 @@ elif selection == "Season 2":
 elif selection == "Season 3":
     season = 3
     Season.SeasonPage(season)
+elif selection == "All Time Driver Statistics":
+    x = 0
+elif selection == "All Time Constructor Statistics":
+    ConstructorAllTime.ConstructorStats(3)
 else:
     st.subheader("Welcome to The Alternative's F1 League")
 
