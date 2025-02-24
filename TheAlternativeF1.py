@@ -6,7 +6,10 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 import plotly.express as px
-import Sidebar, Functions, HomePage
+import Sidebar, Functions, HomePage, Season
+
+## ----- App Format ----- ##
+st.set_page_config(layout="wide") 
 
 selection = Sidebar.Sidebar()
 
@@ -14,13 +17,13 @@ if selection == "Home Page":
     HomePage.HomePage()
 elif selection == "Season 1":
     season = 1
-    Functions.PointTotals(season)
+    Season.SeasonPage(season)
 elif selection == "Season 2":
     season = 2
-    Functions.PointTotals(season)
+    Season.SeasonPage(season)
 elif selection == "Season 3":
     season = 3
-    Functions.PointTotals(season)
+    Season.SeasonPage(season)
 else:
     st.subheader("Welcome to The Alternative's F1 League")
 
