@@ -19,7 +19,7 @@ def Sidebar():
         st.subheader("Detailed Season Pages")
 
         # Season 3 Link
-        link_text = "Season 3"
+        link_text = "Season 3 (Nov 2024 - Feb 2025)"
         link_url = "https://thealternativef124.streamlit.app/"
         st.markdown(f'<a href="{link_url}" target="_blank">{link_text}</a>', unsafe_allow_html=True)
 
