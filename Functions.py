@@ -2,10 +2,8 @@
 #   PointsTotals:   function that calculates and returns the sum of points
 #                   for both drivers and constructors over the course of 
 #                   one season
-#   TotalsLineChart:    function generates a line chart based on driver
-#                       or team points over time across a specific season
-#   TotalsBarChart:     function generates a bar chart based on driver
-#                       or team points totals from a specific season
+#   CalculateAllTime:   Generate all time statistics tables for either
+#                       driver or team
 
 import pandas as pd
 import plotly.graph_objects as go
@@ -19,6 +17,7 @@ qualifying_suffix = "Qualifying"
 fastestlap_suffix = "FastestLap" 
 points_suffix = "Points"
 file = "The_Alternative_F1.xlsx"
+# More color names can be found here: https://www.w3schools.com/cssref/css_colors.php
 team_colors = {
         'Alpine': 'hotpink', 
         'Aston Martin': 'teal',
@@ -26,9 +25,9 @@ team_colors = {
         'McLaren': 'darkorange',
         'Red Bull': 'darkblue',
         'VCARB': 'blue',
-        'AlphaTauri': 'darkgray',
+        'AlphaTauri': 'LightSlateGray',
         'Alfa Romeo': 'darkred',
-        'Mercedes': 'silver',
+        'Mercedes': 'black',
         'Haas': 'gray',
     }  
 
@@ -82,8 +81,8 @@ def PointTotals(season):
         driver_colors[driver] = team_colors.get(team)
 
     # Create line chart plots      
-    constructor_line = Plotting.TotalsLineChart(team_race_totals,team_colors,"Constructor's Championship",races)
-    driver_line = Plotting.TotalsLineChart(driver_race_totals,driver_colors,"Driver's Championship",races)
+    constructor_line = Plotting.TotalsLineChart(team_race_totals,team_colors,"Constructor's Championship",races,'Team')
+    driver_line = Plotting.TotalsLineChart(driver_race_totals,driver_colors,"Driver's Championship",races,'Driver')
 
     # Create bar chart plots
     constructor_bar, constructor_totals = Plotting.TotalsBarChart(team_race_totals,team_colors,"Constructor's Championship",'Team')
@@ -91,15 +90,15 @@ def PointTotals(season):
 
     return constructor_line, driver_line, constructor_bar, constructor_totals, driver_bar, driver_totals
 
-def CalculateAllTime(season,tORd):
+def CalculateAllTime(NumSeason,tORd):
     # Input Variables
-    #   season:   the number of seasons that the laegu has completed to be combined
+    #   NumSeason:   the number of seasons that the laegu has completed to be combined
     #   tORd: 'Team' or 'Driver' 
     
     # Loop through the points scored for each tORd
     dfs = []
     champs = []
-    for i in range(season):
+    for i in range(NumSeason):
         if tORd == 'Team':
             x, x, x, globals()[f'df{i}'], x, x = PointTotals(i+1)
             champ = globals()[f'df{i}']['Team'].iloc[0]
@@ -119,7 +118,7 @@ def CalculateAllTime(season,tORd):
     totals_sorted = totals_sorted[['Place', tORd, 'Points']]
 
     dfs2 = []
-    for i in range(season):
+    for i in range(NumSeason):
         sheet = "Season"+str(i+1)
         globals()[f'df{i}'] = pd.read_excel(file,sheet_name=sheet)
 
@@ -131,7 +130,6 @@ def CalculateAllTime(season,tORd):
         # Keep place columns and remove the rest
         cols_to_keep = [col for col in globals()[f'df{i}'].columns if col.endswith("Place") or col == x]
         globals()[f'df{i}'] = globals()[f'df{i}'][cols_to_keep]
-
         place_cols = [col for col in globals()[f'df{i}'].columns if col!= x]
         melted_df = globals()[f'df{i}'].melt(id_vars=x, value_vars=place_cols, value_name='Place')
 
@@ -163,3 +161,52 @@ def CalculateAllTime(season,tORd):
 
     # Display the final combined dataframe
     st.dataframe(combined_totals, hide_index=True)
+
+def RacesAllTime(NumSeason, tORd):
+    # Input Variables
+    #   NumSeason: the number of seasons that have occurred for the league
+    #   tORd:  team or driver
+
+    dfs3 = []
+    for i in range(NumSeason):
+        sheet = "Season" + str(i + 1)
+        df = pd.read_excel(file, sheet_name=sheet)
+
+        if tORd == 'Team':
+            x = 'Team'
+        elif tORd == 'Driver':
+            x = 'Driver'
+
+        cols_to_keep = [col for col in df.columns if col.endswith("Place") or col == x]
+        df = df[cols_to_keep]
+
+        place_cols = [col.replace("Place", "").strip() for col in df.columns if col != x]
+        summary_data = {'Race': place_cols}
+
+        podium_list = []
+        for col in [c + "Place" for c in place_cols]:
+            podium_entries = []
+            for place, prefix in [(1, '1st: '), (2, '2nd: '), (3, '3rd: ')]:
+                drivers = df[df[col] == place][x].tolist()
+                if drivers:
+                    podium_entries.append(prefix + ', '.join(drivers))
+                else:
+                    podium_entries.append(prefix + "None")
+
+            podium_list.append('\n'.join(podium_entries))
+
+        summary_data['Season ' + str(i + 1)] = podium_list
+        summary_df = pd.DataFrame(summary_data)
+        dfs3.append(summary_df)
+
+    # Concatenate all DataFrames
+    final_df = pd.concat(dfs3, ignore_index=True)
+
+    # Group by 'Race' and aggregate 'Season X' columns
+    grouped_df = final_df.groupby('Race').agg(lambda x: '\n\n'.join(x.dropna())).reset_index()
+
+    # Convert DataFrame to HTML with replaced newlines
+    html = grouped_df.to_html(escape=False, index=False).replace(r'\n', '<br>')
+
+    # Display HTML using st.write
+    st.write(html, unsafe_allow_html=True)

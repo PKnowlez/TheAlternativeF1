@@ -11,7 +11,7 @@ import Functions
 def DriverStats(season,tORd):
     st.subheader("All Time Driver's Statistics")
     st.markdown('''
-                The below summarizes The Alternative's F1 League Driver statistics over the course of Season 1 - Season 
+                Below summarizes The Alternative's F1 League Driver statistics over the course of Season 1 - Season 
                 ''' + str(season) + ".")
     st.markdown('''
                 To ensure accuracy, this page is updated at the conclusion of each season, once all points, wins, and podiums are finalized.

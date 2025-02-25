@@ -1,9 +1,15 @@
+# This file creates the plots for ht emain standings reports per season
+#   TotalsLineChart:    function generates a line chart based on driver
+#                       or team points over time across a specific season
+#   TotalsBarChart:     function generates a bar chart based on driver
+#                       or team points totals from a specific season
+
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 import plotly.express as px
 
-def TotalsLineChart(totals,colors,chart_title,races):
+def TotalsLineChart(totals,colors,chart_title,races,tORd):
     # Input Variables
     #   totals: the constructor or driver totals dataframe
     #   colors: the colors associated with the drivers or constructors
@@ -13,7 +19,8 @@ def TotalsLineChart(totals,colors,chart_title,races):
     # Add a new column of zeros at the beginning
     totals.insert(0, 'Start', 0)  
     totals = totals.T
-    races.insert(0, 'Start') 
+    if tORd == 'Team':
+        races.insert(0, 'Start') 
 
     # Create Plotly figure
     fig1 = go.Figure()

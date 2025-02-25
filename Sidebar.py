@@ -13,7 +13,7 @@ def Sidebar():
 
         # Section Selector
         st.subheader("Historical Results")
-        selection = st.selectbox("Select Section", ["Home Page", "Season 1", "Season 2", "Season 3", "All Time Driver Statistics", "All Time Constructor Statistics"])
+        selection = st.selectbox("Select Section", ["Home Page", "Season 1", "Season 2", "Season 3", "All Time Driver Statistics", "All Time Constructor Statistics", "All Time Race Results"])
 
         # Detailed Page Links
         st.subheader("Detailed Season Pages")
