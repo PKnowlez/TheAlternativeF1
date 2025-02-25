@@ -151,7 +151,8 @@ def CalculateAllTime(season,tORd):
     combined_totals = pd.merge(totals_sorted, totals_sorted2, on=[tORd], how='outer')
     combined_totals = combined_totals.groupby([tORd, 'Points']).sum().reset_index()
     combined_totals = combined_totals.sort_values(by='Points', ascending=False).reset_index(drop=True)
-    combined_totals = combined_totals[['Place', tORd, 'Points', '1st Place', '2nd Place', '3rd Place']]
+    combined_totals['Podiums'] = combined_totals['1st Place'] + combined_totals['2nd Place'] + combined_totals['3rd Place']
+    combined_totals = combined_totals[['Place', tORd, 'Points', '1st Place', '2nd Place', '3rd Place','Podiums']]
     if tORd == 'Team':
         x = "Constructor's Champion"
     elif tORd == 'Driver':
