@@ -18,13 +18,13 @@ def Sidebar():
         st.subheader("Detailed Season Pages")
 
         # Season 1 Link
-        link_text = "Season 1 (Coming Soon)"
-        link_url = "https://thealternativef1.streamlit.app/"
+        link_text = "Season 1"
+        link_url = "https://thealternatives1.streamlit.app/"
         st.markdown(f'<a href="{link_url}" target="_blank">{link_text}</a>', unsafe_allow_html=True)
 
         # Season 2 Link
-        link_text = "Season 2 (Coming Soon)"
-        link_url = "https://thealternativef1.streamlit.app/"
+        link_text = "Season 2"
+        link_url = "https://thealternatives2.streamlit.app/"
         st.markdown(f'<a href="{link_url}" target="_blank">{link_text}</a>', unsafe_allow_html=True)
 
         # Season 3 Link
