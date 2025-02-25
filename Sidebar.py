@@ -12,15 +12,24 @@ def Sidebar():
         st.image(logo)
 
         # Section Selector
-        st.subheader("Historical Results")
         selection = st.selectbox("Select Section", ["Home Page", "Season 1", "Season 2", "Season 3", "All Time Driver Statistics", "All Time Constructor Statistics", "All Time Race Results"])
 
         # Detailed Page Links
         st.subheader("Detailed Season Pages")
 
+        # Season 1 Link
+        link_text = "Season 1 (Coming Soon)"
+        link_url = "https://thealternativef1.streamlit.app/"
+        st.markdown(f'<a href="{link_url}" target="_blank">{link_text}</a>', unsafe_allow_html=True)
+
+        # Season 2 Link
+        link_text = "Season 2 (Coming Soon)"
+        link_url = "https://thealternativef1.streamlit.app/"
+        st.markdown(f'<a href="{link_url}" target="_blank">{link_text}</a>', unsafe_allow_html=True)
+
         # Season 3 Link
         link_text = "Season 3 (Nov 2024 - Feb 2025)"
-        link_url = "https://thealternativef124.streamlit.app/"
+        link_url = "https://thealternatives3.streamlit.app/"
         st.markdown(f'<a href="{link_url}" target="_blank">{link_text}</a>', unsafe_allow_html=True)
 
         # Season 4 Link
