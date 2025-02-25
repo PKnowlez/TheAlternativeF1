@@ -6,6 +6,6 @@ from PIL import Image
 
 def HomePage():
     st.subheader("The Alternative F1 League")
-    st.makrdown('''
+    st.markdown('''
                 Work In Progress
                 ''')
