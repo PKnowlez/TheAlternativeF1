@@ -7,7 +7,6 @@ from PIL import Image
 logo = Image.open("./Images/TheAlternativeBaseLogo.png")
 
 def Sidebar():
-    st.set_page_config(initial_sidebar_state="expanded")
     with st.sidebar:
         # Header
         st.image(logo)

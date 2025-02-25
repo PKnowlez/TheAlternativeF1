@@ -9,7 +9,7 @@ import plotly.express as px
 import Sidebar, Functions, HomePage, Season, ConstructorAllTime
 
 ## ----- App Format ----- ##
-st.set_page_config(layout="wide") 
+st.set_page_config(initial_sidebar_state="expanded", layout="wide")
 
 selection = Sidebar.Sidebar()
 
