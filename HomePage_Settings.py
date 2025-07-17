@@ -1,26 +1,8 @@
 import streamlit as st
 import pandas as pd
-from PIL import Image
-import base64
-from io import BytesIO
-import os
 
 def HomePageSettings():
-    racelength = Image.open("./Images/stopwatch.png")
     rules = {
-        "icon": [   
-                pil_image_to_base64(racelength, format="PNG"),
-                pil_image_to_base64(racelength, format="PNG"),
-                pil_image_to_base64(racelength, format="PNG"),
-                pil_image_to_base64(racelength, format="PNG"),
-                pil_image_to_base64(racelength, format="PNG"),
-                pil_image_to_base64(racelength, format="PNG"),
-                pil_image_to_base64(racelength, format="PNG"),
-                pil_image_to_base64(racelength, format="PNG"),
-                pil_image_to_base64(racelength, format="PNG"),
-                pil_image_to_base64(racelength, format="PNG"),
-                pil_image_to_base64(racelength, format="PNG"),
-            ],
         "Setting":  [   
                         'Race Length',
                         'Qualifying Length',
@@ -49,22 +31,17 @@ def HomePageSettings():
                     ]
     }
     df = pd.DataFrame(rules)
+    
+    # Use Pandas Styler to apply CSS directly to headers and hide the index
+    styled_df = df.style.set_properties(**{'text-align': 'left'}) \
+                      .set_table_styles([
+                          {'selector': 'th', 'props': [('text-align', 'left')]},
+                          # Add 'td' selector if you want data cells also left-justified
+                          {'selector': 'td', 'props': [('text-align', 'left')]}
+                      ]) \
+                      .hide(axis="index") # This is the key to hide the index
 
-    st.dataframe(
-        df,
-        column_config={
-            "icon": st.column_config.ImageColumn(
-                "",
-                width="small",
-            )
-        },
-        hide_index=True,
-        use_container_width=False
-    )
+    # Convert the styled DataFrame to HTML
+    html_table = styled_df.to_html() # No need for index=False here, as hide(axis="index") does the job
 
-# Helper function to convert a PIL Image object to a Base64 data URL
-def pil_image_to_base64(pil_img, format="PNG"):
-    buffered = BytesIO()
-    pil_img.save(buffered, format=format)
-    img_str = base64.b64encode(buffered.getvalue()).decode()
-    return f"data:image/{format.lower()};base64,{img_str}"
+    st.markdown(html_table, unsafe_allow_html=True)
