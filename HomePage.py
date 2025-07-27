@@ -7,7 +7,7 @@ def HomePage():
     st.subheader("The Alternative F1 League")
     tabs = st.tabs([
         "General League News",
-        "Current League Rules",
+        "Current League Regulations",
         "Current League Settings"
     ])
 
