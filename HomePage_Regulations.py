@@ -25,7 +25,7 @@ def HomePageRegulations():
                             'If a driver wrongfully receives a Drive Through Penalty due to a VSC or Safety Car delta glitch, the driver will have their finsihing time improved by 20 seconds. This remedy will only be applied if no VSC, Safety Car, or Red Flag occurs after the glitch occurred.',
                             "If a driver's race is ruined (DNF) or endangered (more than 3 lost places) due to reckless driving actions of another driver, the reckelss driver will be awared a 5 place penalty to their finishing position. If the reckelss driving is deemed intentional, the driver will be disqualified.",
                             'Any driver that disagrees with a ruling, has the right to protes the ruling within one day of the final ruling. This protest will be reviewed by the league and require a 2/3rds majority vote to overturn.',
-                            'Sprint Qualifying > Sprint > Race Qualifying = Reverse Grid set by Sprint Results (All AI will be placed in front of ALL drivers, regardless of finsihing position)'
+                            'Sprint Qualifying > Sprint > Race Qualifying = Reverse Grid set by Sprint Results (All AI will be placed in front of ALL drivers, regardless of finishing position)'
                         ]
     }
     df = pd.DataFrame(rules)
