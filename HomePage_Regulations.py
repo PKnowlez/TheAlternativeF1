@@ -12,7 +12,7 @@ def HomePageRegulations():
                             'Driver of the Day Award',
                             'Most Overtakes Award',
                             'VSC or Safety Car Delta Glitch',
-                            "Endangering or Ruining Another Driver's Race",
+                            "Endangering or Ruining Another Driver's Race*",
                             'Right to Protest',
                             'Sprint Day Format'
                         ],
@@ -23,7 +23,7 @@ def HomePageRegulations():
                             'One (1) point will be awarded to the driver who earns Driver of the Day at the end of the race.',
                             'One (1) point will be awarded to the driver with the Most Overtakes at the end of the race.',
                             'If a driver wrongfully receives a Drive Through Penalty due to a VSC or Safety Car delta glitch, the driver will have their finsihing time improved by 20 seconds. This remedy will only be applied if no VSC, Safety Car, or Red Flag occurs after the glitch occurred.',
-                            "If a driver's race is ruined (DNF) or endangered (more than 3 lost places) due to reckless driving actions of another driver, the reckelss driver will be awared a 5 place penalty to their finishing position. If the reckelss driving is deemed intentional, the driver will be disqualified.",
+                            "If a driver's race is ruined (DNF) or endangered (more than 3 lost places) due to reckless driving actions of another driver, the reckless driver will be awared a 5 place penalty to their finishing position. If the reckelss driving is deemed intentional, the driver will be disqualified.*",
                             'Any driver that disagrees with a ruling, has the right to protes the ruling within one day of the final ruling. This protest will be reviewed by the league and require a 2/3rds majority vote to overturn.',
                             'Sprint Qualifying > Sprint > Race Qualifying = Reverse Grid set by Sprint Results (All AI will be placed in front of ALL drivers, regardless of finishing position)'
                         ]
@@ -43,3 +43,6 @@ def HomePageRegulations():
     html_table = styled_df.to_html() # No need for index=False here, as hide(axis="index") does the job
 
     st.markdown(html_table, unsafe_allow_html=True)
+    st.markdown('''
+                *This regulation only applies after the first 2 laps of the race or restart. If reckless driving occurs during a start or restart, the incident will be reviewed per request of the driver who's race was endangered or ruined.
+                ''')
