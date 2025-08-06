@@ -5,17 +5,11 @@ from streamlit_carousel import carousel
 st.markdown(
     """
     <style>
-    /* Target the container of the entire carousel */
-    .stCarousel {
-        height: auto !important; /* Allow the container to adjust to the image height */
-        overflow: visible !important; /* Ensure content is not cut off */
-    }
-
     /* Target the image container within the carousel */
-    .stCarousel img {
-        width: 100%; /* Make image fill the container width */
-        height: auto; /* Maintain the image's aspect ratio based on width */
-        object-fit: contain; /* Ensure the image is fully visible without cropping */
+    .st-emotion-cache-1pxn4x7 img {
+        width: 100%; 
+        height: auto; 
+        object-fit: contain; 
     }
     </style>
     """,
