@@ -36,14 +36,14 @@ def HomePageNews():
 
     driver_announcements = [
         {
-            "title": "",
-            "text": "",
-            "img": "./Images/Alpine_Driver_Post.png"
+            "title": "Alpine Driver Announcement",
+            "text": "Alpine Driver Announcement",
+            "img": img1
         },
         {
             "title": "",
             "text": "",
-            "img": "./Images/Alpine_Driver_Post.png"
+            "img": img1
         },
     ]
 
