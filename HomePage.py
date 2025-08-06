@@ -4,7 +4,7 @@ import streamlit as st
 import HomePage_News, HomePage_Regulations, HomePage_Settings
 
 def HomePage():
-    st.subheader("The Alternative F1 League")
+    # st.subheader("The Alternative F1 League")
     tabs = st.tabs([
         "General League News",
         "Current League Regulations",
