@@ -5,10 +5,16 @@ from streamlit_carousel import carousel
 st.markdown(
     """
     <style>
+    /* Target the container of the entire carousel */
+    .stCarousel {
+        height: auto !important; /* Allow the container to adjust to the image height */
+        overflow: visible !important; /* Ensure content is not cut off */
+    }
+
     /* Target the image container within the carousel */
     .stCarousel img {
         width: 100%; /* Make image fill the container width */
-        height: 100%; /* Maintain the image's aspect ratio */
+        height: auto; /* Maintain the image's aspect ratio based on width */
         object-fit: contain; /* Ensure the image is fully visible without cropping */
     }
     </style>
