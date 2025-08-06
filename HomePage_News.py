@@ -21,6 +21,11 @@ def HomePageNews():
         {
             "title": "",
             "text": "",
+            "img": "./Images/Driver_Lineup.png"
+        },
+        {
+            "title": "",
+            "text": "",
             "img": "./Images/Alpine_Driver_Post.png"
         },
         {
