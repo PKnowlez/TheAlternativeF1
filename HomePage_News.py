@@ -5,11 +5,11 @@ from streamlit_carousel import carousel
 st.markdown(
     """
     <style>
-    /* Target the image container within the carousel */
-    .st-emotion-cache-1pxn4x7 img {
-        width: 100%; 
-        height: auto; 
-        object-fit: contain; 
+    /* Target the carousel's slide item container */
+    .slick-slide img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
     </style>
     """,
@@ -17,7 +17,6 @@ st.markdown(
 )
 
 def HomePageNews():
-    #region Driver Announcements
     driver_announcements = [
         {
             "title": "",
@@ -33,4 +32,3 @@ def HomePageNews():
 
     carousel(items=driver_announcements, interval=30000)
     st.divider()
-    #endregion
