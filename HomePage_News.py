@@ -38,12 +38,12 @@ def HomePageNews():
         {
             "title": "Alpine Driver Announcement",
             "text": "Alpine Driver Announcement",
-            "img": img1
+            "img": "./Images/Alpine_Driver_Post.png"
         },
         {
             "title": "",
             "text": "",
-            "img": img1
+            "img": "./Images/Alpine_Driver_Post.png"
         },
     ]
 
