@@ -17,6 +17,7 @@ st.markdown(
 )
 
 def HomePageNews():
+    #region Driver Announcements
     driver_announcements = [
         {
             "title": "",
@@ -37,3 +38,4 @@ def HomePageNews():
 
     carousel(items=driver_announcements, interval=30000)
     st.divider()
+    #endregion
