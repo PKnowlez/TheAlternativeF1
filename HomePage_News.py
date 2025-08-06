@@ -30,7 +30,7 @@ def HomePageNews():
             "img": "./Images/Alpine_Driver_Post.png"
         },
     ]
-
+    
     carousel(items=driver_announcements, autoplay=True, interval=30000)
     st.divider()
     #endregion
