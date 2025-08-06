@@ -12,7 +12,7 @@ def Sidebar():
         st.image(logo)
 
         # Section Selector
-        selection = st.selectbox("Select Section", ["Home Page", "Season 1 Summary", "Season 2 Summary", "Season 3 Summary", "All Time Driver Statistics", "All Time Constructor Statistics", "All Time Race Results"])
+        selection = st.selectbox("Select Section", ["Home Page", "Season 1", "Season 2", "Season 3", "All Time Driver Statistics", "All Time Constructor Statistics", "All Time Race Results"])
 
         # Detailed Page Links
         st.subheader("Detailed Season Pages")
