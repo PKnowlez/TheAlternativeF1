@@ -2,19 +2,19 @@ import streamlit as st
 from PIL import Image
 from streamlit_carousel import carousel
 
-st.markdown(
-    """
-    <style>
-    /* Target the carousel's slide item container */
-    .slick-slide img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+# st.markdown(
+#     """
+#     <style>
+#     /* Target the carousel's slide item container */
+#     .slick-slide img {
+#         width: 100%;
+#         height: auto;
+#         object-fit: contain;
+#     }
+#     </style>
+#     """,
+#     unsafe_allow_html=True
+# )
 
 def HomePageNews():
     #region Driver Announcements
