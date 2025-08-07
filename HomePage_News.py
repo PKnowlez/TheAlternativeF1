@@ -34,8 +34,18 @@ def HomePageNews():
             "text": "",
             "img": "./Images/McLaren_Driver_Post.png"
         },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/Red_Bull_Driver_Post.png"
+        },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/VCARB_Driver_Post.png"
+        },
     ]
 
-    carousel(items=driver_announcements, interval=30000)
+    carousel(items=driver_announcements, interval=20000)
     st.divider()
     #endregion
