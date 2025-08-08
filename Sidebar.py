@@ -28,7 +28,7 @@ def Sidebar():
         st.markdown(f'<a href="{link_url}" target="_blank">{link_text}</a>', unsafe_allow_html=True)
 
         # Season 3 Link
-        link_text = "Season 3 (Nov 2024 - Feb 2025)"
+        link_text = "Season 3"
         link_url = "https://thealternatives3.streamlit.app/"
         st.markdown(f'<a href="{link_url}" target="_blank">{link_text}</a>', unsafe_allow_html=True)
 
