@@ -22,7 +22,7 @@ def HomePageNews():
         {
             "title": "",
             "text": "",
-            "img": ".\Images\Driver_Lineup.png"
+            "img": "./Images/Driver_Lineup.png"
         },
         {
             "title": "",
