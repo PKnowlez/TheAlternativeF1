@@ -5,7 +5,7 @@ from streamlit_carousel import carousel
 def HomePageNews():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
-        
+
     #region Latest News
     latest_news = [
         {
@@ -32,6 +32,7 @@ def HomePageNews():
 
     if st.session_state.show_all_content:
     #region Driver Announcements
+        st.subheader("Season 4 Driver Lineup")
         driver_announcements = [
             {
                 "title": "",
