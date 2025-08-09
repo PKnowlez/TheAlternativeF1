@@ -54,6 +54,21 @@ def HomePageNews():
             "text": "",
             "img": "./Images/Intern_2.png"
         },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/Aston_Martin_Driver_Post.png"
+        },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/Ferrari_Driver_Post.png"
+        },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/Mercedes_Driver_Post.png"
+        },
     ]
 
     carousel(items=driver_announcements, interval=20000)
