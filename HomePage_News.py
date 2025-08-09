@@ -24,26 +24,26 @@ def HomePageNews():
             "text": "",
             "img": "./Images/Driver_Lineup.png"
         },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/Alpine_Driver_Post.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/McLaren_Driver_Post.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/Red_Bull_Driver_Post.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/VCARB_Driver_Post.png"
-        },
+        # {
+        #     "title": "",
+        #     "text": "",
+        #     "img": "./Images/Alpine_Driver_Post.png"
+        # },
+        # {
+        #     "title": "",
+        #     "text": "",
+        #     "img": "./Images/McLaren_Driver_Post.png"
+        # },
+        # {
+        #     "title": "",
+        #     "text": "",
+        #     "img": "./Images/Red_Bull_Driver_Post.png"
+        # },
+        # {
+        #     "title": "",
+        #     "text": "",
+        #     "img": "./Images/VCARB_Driver_Post.png"
+        # },
         # {
         #     "title": "",
         #     "text": "",
