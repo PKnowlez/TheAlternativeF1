@@ -3,6 +3,9 @@ from PIL import Image
 from streamlit_carousel import carousel
 
 def HomePageNews():
+    if 'show_all_content' not in st.session_state:
+        st.session_state.show_all_content = False
+        
     #region Latest News
     latest_news = [
         {
