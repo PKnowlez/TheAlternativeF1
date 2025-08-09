@@ -44,16 +44,16 @@ def HomePageNews():
             "text": "",
             "img": "./Images/VCARB_Driver_Post.png"
         },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/Intern_1.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/Intern_2.png"
-        },
+        # {
+        #     "title": "",
+        #     "text": "",
+        #     "img": "./Images/Intern_1.png"
+        # },
+        # {
+        #     "title": "",
+        #     "text": "",
+        #     "img": "./Images/Intern_2.png"
+        # },
         {
             "title": "",
             "text": "",
