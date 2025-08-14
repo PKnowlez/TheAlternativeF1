@@ -13,6 +13,36 @@ def HomePageNews():
             "text": "",
             "img": "./Images/Driver_Lineup.png"
         },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/Tracks_1.png"
+        },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/Tracks_2.png"
+        },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/Tracks_3.png"
+        },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/Tracks_4.png"
+        },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/Tracks_5.png"
+        },
+        {
+            "title": "",
+            "text": "",
+            "img": "./Images/Tracks_6.png"
+        },
     ]
     
     carousel(items=latest_news, interval=20000)
