@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 from streamlit_carousel import carousel
+from Articles import season4_track_overview
 
 def HomePageNews():
     if 'show_all_content' not in st.session_state:
@@ -47,6 +48,12 @@ def HomePageNews():
     
     carousel(items=latest_news, interval=20000)
     st.divider()
+    #endregion
+
+    #region latest article
+    
+    season4_track_overview.article()
+
     #endregion
 
     # ----------------------------------------------------------------------------------------------------------
