@@ -8,46 +8,16 @@ def HomePageNews():
         st.session_state.show_all_content = False
 
     #region Latest News
-    latest_news = [
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/Driver_Lineup.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/Tracks_1.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/Tracks_2.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/Tracks_3.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/Tracks_4.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/Tracks_5.png"
-        },
-        {
-            "title": "",
-            "text": "",
-            "img": "./Images/Tracks_6.png"
-        },
-    ]
+    # latest_news = [
+    #     {
+    #         "title": "",
+    #         "text": "",
+    #         "img": "./Images/Driver_Lineup.png"
+    #     },
+    # ]
     
-    carousel(items=latest_news, interval=20000)
-    st.divider()
+    # carousel(items=latest_news, interval=20000)
+    # st.divider()
     #endregion
 
     #region latest article
@@ -121,6 +91,36 @@ def HomePageNews():
                 "text": "",
                 "img": "./Images/Mercedes_Driver_Post.png"
             },
+            {
+                "title": "",
+                "text": "",
+                "img": "./Images/Tracks_1.png"
+            },
+            {
+                "title": "",
+                "text": "",
+                "img": "./Images/Tracks_2.png"
+            },
+            {
+                "title": "",
+                "text": "",
+                "img": "./Images/Tracks_3.png"
+            },
+            {
+                "title": "",
+                "text": "",
+                "img": "./Images/Tracks_4.png"
+            },
+            {
+                "title": "",
+                "text": "",
+                "img": "./Images/Tracks_5.png"
+            },
+            {
+                "title": "",
+                "text": "",
+                "img": "./Images/Tracks_6.png"
+        },
         ]
 
         carousel(items=driver_announcements, interval=20000)
