@@ -142,9 +142,15 @@ def HomePageSettings():
         html_table_setup(weekend_structure)
     with col5:
         html_table_setup(sprint_weekend)
+    
+    st.divider()
 
-    st.markdown("*League officials are still determining best course of action for this setting.")
-    st.markdown("**Depending on teh track this setting may be adjusted to ensure a competitive and enjoyable racing experience.")
+    st.markdown(
+        f""" <p style="color:lightgray;">*League officials are still determining best course of action for this setting.</p>
+        """, unsafe_allow_html=True,)
+    st.markdown(
+        f""" <p style="color:lightgray;">**Depending on the track this setting may be adjusted to ensure a competitive and enjoyable racing experience.</p>
+        """, unsafe_allow_html=True,)
 
 def html_table_setup(list):
     df = pd.DataFrame(list)
