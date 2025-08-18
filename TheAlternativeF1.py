@@ -6,7 +6,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 import plotly.express as px
-import Sidebar, Functions, HomePage, Season, ConstructorAllTime, DriverAllTime, RacesAllTime
+import Sidebar, Functions, HomePage_News, Regulations, Season, ConstructorAllTime, DriverAllTime, RacesAllTime
 
 ## ----- App Format ----- ##
 st.set_page_config(initial_sidebar_state="expanded", layout="wide")
@@ -15,7 +15,9 @@ selection = Sidebar.Sidebar()
 NumSeasons = 3
 
 if selection == "Home Page":
-    HomePage.HomePage()
+    HomePage_News.HomePageNews()
+elif selection == "Regulations & Settings":
+    Regulations.RegulationsSettings()
 elif selection == "Season 1":
     season = 1
     Season.SeasonPage(season)

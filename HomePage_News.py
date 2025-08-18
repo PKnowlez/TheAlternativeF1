@@ -4,6 +4,8 @@ from streamlit_carousel import carousel
 from Articles import season4_track_overview
 
 def HomePageNews():
+    st.header("The Alternative F1 League")
+
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
 
