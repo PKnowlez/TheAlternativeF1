@@ -5,7 +5,18 @@ from Articles import season4_track_overview
 
 def HomePageNews():
     st.header("The Alternative F1 League")
-    st.divider(color="#00b4da")
+    # Your custom CSS for the divider
+    st.markdown("""
+    <style>
+    .colored-divider {
+        border-top: 3px solid #00b4da;
+        border-radius: 3px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    # Use the custom divider
+    st.markdown('<div class="colored-divider"></div>', unsafe_allow_html=True)
 
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
