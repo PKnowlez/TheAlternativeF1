@@ -5,6 +5,7 @@ from Articles import season4_track_overview
 
 def HomePageNews():
     st.header("The Alternative F1 League")
+    st.divider(color="#00b4da")
 
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
