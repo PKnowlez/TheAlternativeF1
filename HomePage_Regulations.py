@@ -4,13 +4,14 @@ import pandas as pd
 
 def HomePageRegulations():
     rules = {
-        "":['1','2','3','4','5','6','7','8','9'],
+        "":['1','2','3','4','5','6','7','8','9','10','11'],
         "Regulation":   [
                             'Points Elgibility',
                             'Finishing Points',
                             'Fastest Lap Award',
                             'Driver of the Day Award',
                             'Most Overtakes Award',
+                            'Cleanest Driver Award',
                             'VSC or Safety Car Delta Glitch',
                             "Endangering or Ruining Another Driver's Race*",
                             'Right to Protest',
@@ -23,6 +24,7 @@ def HomePageRegulations():
                             'One (1) point will be awarded to the driver with the Fastest Lap at the end of the race.',
                             'One (1) point will be awarded to the driver who earns Driver of the Day at the end of the race.',
                             'One (1) point will be awarded to the driver with the Most Overtakes at the end of the race.',
+                            'One (1) point will be awarded to the driver who earns Cleanest Driver at the end of the race.',
                             'If a driver wrongfully receives a Drive Through Penalty due to a VSC or Safety Car delta glitch, the driver will have their finsihing time improved by 20 seconds. This remedy will only be applied if no VSC, Safety Car, or Red Flag occurs after the glitch occurred.',
                             "If a driver's race is ruined (DNF) or endangered (more than 3 lost places) due to reckless driving actions of another driver, the reckless driver will be awared a 5 place penalty to their finishing position. If the reckelss driving is deemed intentional, the driver will be disqualified.*",
                             'Any driver that disagrees with a ruling, has the right to protest the ruling within one day of the final ruling. This protest will be reviewed by the league and require a 2/3rds majority vote to overturn.',
