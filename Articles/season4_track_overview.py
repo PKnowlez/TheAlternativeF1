@@ -87,7 +87,7 @@ def article():
                 ''')
     st.markdown(f'<img src="data:image/gif;base64,{data_url_surfer}" alt="Your GIF">', unsafe_allow_html=True)
     st.markdown('''
-                I really hope that made sense to someone out there, our intern has returned with died hair and a lot more slang this year. Anyways, there really is no knowing how the race in Austria will go, but it will be exciting nonetheless.
+                I really hope that made sense to someone out there, our intern has returned with dyed hair and a lot more slang this year. Anyways, there really is no knowing how the race in Austria will go, but it will be exciting nonetheless.
                 
                 **Week 7: Spa** Will McLaren and Nick's win streak continue? Arguably one of the most famous circuits on the planet, Circuit de Spa-Francorchamps continues to remain a perennial favorite for the league's drivers.
 
@@ -115,7 +115,7 @@ def article():
                 
                 **Week 11: Jeddah** With a long stint of permanent circuits done and dusted, the drivers will head right into one of the tightest and high speed street circuits around. There will be nearly no room for error as each driver battles those around them and themselves through the narrow corridors of Jeddah.
 
-                Previously, the leasgue has shied away from taking to the streets here, making this the first ever race on this circuit. Truly, all bets are fair as no real data on a circuit like this exists for the current field of drivers.
+                Previously, the league has shied away from taking to the streets here, making this the first ever race on this circuit. Truly, all bets are fair as no real data on a circuit like this exists for the current field of drivers.
                 ''')
     st.image(tracks_5)
     st.markdown('''
