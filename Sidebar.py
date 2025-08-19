@@ -33,8 +33,8 @@ def Sidebar():
         st.markdown(f'<a href="{link_url}" target="_blank">{link_text}</a>', unsafe_allow_html=True)
 
         # Season 4 Link
-        link_text = "Season 4 (Coming Soon)"
-        link_url = "https://thealternativef1.streamlit.app/"
+        link_text = "Season 4 (WIP)"
+        link_url = "https://thealternatives4.streamlit.app/"
         st.markdown(f'<a href="{link_url}" target="_blank">{link_text}</a>', unsafe_allow_html=True)
 
     return selection
