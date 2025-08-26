@@ -18,11 +18,3 @@ def article():
         ''',
         unsafe_allow_html=True,)
     st.divider()
-
-# ----- How to add a GIF: ----- #
-# gif = open('./Images/surfer.gif','rb')
-# contents = gif.read()
-# data_url = base64.b64encode(contents).decode('utf-8')
-# st.markdown(f'<img src="data:image/gif;base64,{data_url}" alt="Your GIF">', unsafe_allow_html=True)
-
-# ----- How to add a Carousel ----- #

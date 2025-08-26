@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 from streamlit_carousel import carousel
-from Articles import season4_track_overview, season4_schedule_reveal, season4_trophy_reveal
+from Articles import season4_track_overview, season4_schedule_reveal, season4_trophy_reveal, season4_track_tier_list
 
 def HomePageNews():
     st.header("The Alternative F1 League")
@@ -36,6 +36,8 @@ def HomePageNews():
 
     #region latest article
     
+    season4_track_tier_list.article()
+
     season4_trophy_reveal.article()
 
     #endregion
