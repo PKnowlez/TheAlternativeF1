@@ -26,3 +26,17 @@ def article():
 # st.markdown(f'<img src="data:image/gif;base64,{data_url}" alt="Your GIF">', unsafe_allow_html=True)
 
 # ----- How to add a Carousel ----- #
+# carousel_images = [
+#             {
+#                 "title": "",
+#                 "text": "",
+#                 "img": "./Images/image.png"
+#             },
+#             {
+#                 "title": "",
+#                 "text": "",
+#                 "img": "./Images/image.png"
+#             },
+#         ]
+
+# carousel(items=carousel_images, interval=20000)
