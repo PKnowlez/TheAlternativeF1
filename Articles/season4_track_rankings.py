@@ -133,7 +133,7 @@ def article():
     st.markdown('''**Rankings Across the Season**''')
     st.plotly_chart(step_graph, use_container_width=True)
     st.markdown('''
-                Above we see the rankings of the tracks, in order from the Average Votes ranking, plotted against the order in which they occur over the course of this season.
+                Above we see the rankings of the tracks, based on their Most Votes ranking, plotted against the order in which they occur over the course of this season.
 
                 What this tells us is that the middle stint of the season from Spa to Zandvoort is sure to be a memorable series of races regardless of results.
 
