@@ -25,7 +25,7 @@ def article():
     st.markdown('''
                 All this means that when the lights go out for the first time this season, there will be so much more at play than just the two main championships. Yes, a four-peat is on the line for the Driver's Championship, and yes the Constructor's Championship is certainly way up in the air. But maybe more importantly, the league's rookies are going to be elevated well above where they might normally be and put straight into the spotlight from day one.
                 
-                Each of these rookies will be racing for their own copy of the league's trohpy that lists them as the one and only rookie of the year for The Alternative F1 Season 4.
+                Each of these rookies will be racing for their own copy of the league's trophy that lists them as the one and only rookie of the year for The Alternative F1 Season 4.
                 ''')
     st.markdown(
         f'''
