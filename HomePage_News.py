@@ -64,7 +64,7 @@ def HomePageNews():
 
         season4_track_overview.article()
 
-    #region Driver Announcements
+        #region Driver Announcements
         st.subheader("Season 4 Driver Lineup")
         driver_announcements = [
             {
