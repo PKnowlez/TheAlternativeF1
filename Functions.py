@@ -92,10 +92,10 @@ def PointTotals(season):
 
 def CalculateAllTime(NumSeason,tORd):
     # Input Variables
-    #   NumSeason:   the number of seasons that the laegu has completed to be combined
-    #   tORd: 'Team' or 'Driver' 
-    
-    # Loop through the points scored for each tORd
+    #   NumSeason:   the number of seasons that the league has completed to be combined
+    #   tORd: 'Team' or 'Driver'
+     
+    # Loop through the points scored for each tORd 
     dfs = []
     champs = []
     for i in range(NumSeason):
@@ -158,6 +158,82 @@ def CalculateAllTime(NumSeason,tORd):
     combined_totals[x] = 0
     for champ in champs:
         combined_totals.loc[combined_totals[tORd] == champ, x] += 1
+
+    # Read in all season dataframes and concatenate them
+    dfs_all_seasons = []
+    for i in range(NumSeason):
+        sheet = "Season"+str(i+1)
+        df_season = pd.read_excel(file, sheet_name=sheet)
+        df_season['Season'] = i + 1
+        dfs_all_seasons.append(df_season)
+    all_races_df = pd.concat(dfs_all_seasons)
+
+    # Melt the dataframe to have a single column for race results
+    melted_races = all_races_df.melt(id_vars=[tORd, 'Season'], value_vars=[col for col in all_races_df.columns if col.endswith('Place')], var_name='Race', value_name='Place')
+    
+    # Sort the dataframe by season and then race to ensure correct streak calculations
+    melted_races['Race_Order'] = melted_races.groupby('Season')['Race'].rank(method='dense')
+    melted_races = melted_races.sort_values(by=['Season', 'Race_Order']).reset_index(drop=True)
+
+    # Calculate streaks
+    if tORd == 'Driver':
+        combined_totals['Win Streak'] = 0
+        combined_totals['Single Season Win Streak'] = 0
+        
+        for entity in combined_totals[tORd].unique():
+            entity_df = melted_races[melted_races[tORd] == entity].sort_values(by=['Season', 'Race_Order']).copy()
+            
+            # Overall win streak
+            max_win_streak = 0
+            current_win_streak = 0
+            
+            # Single-season win streak
+            max_ss_win_streak = 0
+            current_ss_win_streak = 0
+            
+            last_season = None
+            
+            for index, row in entity_df.iterrows():
+                place = row['Place']
+                season = row['Season']
+                
+                # Overall win streak logic
+                is_win = place == 1
+
+                if is_win:
+                    current_win_streak += 1
+                else:
+                    max_win_streak = max(max_win_streak, current_win_streak)
+                    current_win_streak = 0
+                
+                # Single-season win streak logic
+                if last_season is not None and season != last_season:
+                    max_ss_win_streak = max(max_ss_win_streak, current_ss_win_streak)
+                    current_ss_win_streak = 0
+                
+                if is_win:
+                    current_ss_win_streak += 1
+                else:
+                    max_ss_win_streak = max(max_ss_win_streak, current_ss_win_streak)
+                    current_ss_win_streak = 0
+                
+                last_season = season
+                
+            max_win_streak = max(max_win_streak, current_win_streak)
+            max_ss_win_streak = max(max_ss_win_streak, current_ss_win_streak)
+            
+            combined_totals.loc[combined_totals[tORd] == entity, 'Win Streak'] = max_win_streak
+            combined_totals.loc[combined_totals[tORd] == entity, 'Single Season Win Streak'] = max_ss_win_streak
+        
+        # Reorder columns for drivers
+        combined_totals = combined_totals[['Place', tORd, 'Points', '1st Place', '2nd Place', '3rd Place', 'Podiums', x, 'Win Streak', 'Single Season Win Streak']]
+
+    elif tORd == 'Team':
+        # Remove Podium columns as they are not needed for Team analysis as requested
+        combined_totals = combined_totals.drop(columns=['Podiums'])
+        
+        # Reorder columns for teams
+        combined_totals = combined_totals[['Place', tORd, 'Points', '1st Place', '2nd Place', '3rd Place', x]]
 
     # Display the final combined dataframe
     st.dataframe(combined_totals, hide_index=True)
