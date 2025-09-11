@@ -228,6 +228,15 @@ def CalculateAllTime(NumSeason,tORd):
         # Reorder columns for drivers
         combined_totals = combined_totals[['Place', tORd, 'Points', '1st Place', '2nd Place', '3rd Place', 'Podiums', x, 'Win Streak', 'Single Season Win Streak']]
 
+        # # Find the index of the row with the maximum 'Win Streak'
+        # max_streak_index = combined_totals['Win Streak'].idxmax()
+        # # Use that index to get the driver's name from that row
+        # driver_with_max_streak = combined_totals.loc[max_streak_index, 'Driver']
+        # # Get the win streak value from that same row
+        # win_streak_value = combined_totals.loc[max_streak_index, 'Win Streak']\
+        # # Update the subheader to include both the name and the streak count
+        # st.markdown(f"🏆 Longest Win Streak: {driver_with_max_streak} ({win_streak_value} Wins)")
+
     elif tORd == 'Team':
         # Remove Podium columns as they are not needed for Team analysis as requested
         combined_totals = combined_totals.drop(columns=['Podiums'])
