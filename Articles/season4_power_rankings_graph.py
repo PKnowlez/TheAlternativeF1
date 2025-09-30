@@ -27,7 +27,10 @@ def graph():
                   y=df_for_plotting.columns,
                   markers=True,
                   color_discrete_map=team_colors,
-                  labels={'variable': 'Team', 'value': 'Place'}) # <-- ADD THIS LINE
+                  labels={'variable': 'Team', 'value': 'Place'})
+    
+    fig.update_traces(line=dict(width=10))
+    fig.update_traces(marker=dict(size=10))
 
     min_rank = int(df_for_plotting.min().min())
     max_rank = int(df_for_plotting.max().max())
