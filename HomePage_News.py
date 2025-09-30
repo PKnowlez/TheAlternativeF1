@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 from streamlit_carousel import carousel
 from Articles import season4_track_overview, season4_schedule_reveal, season4_trophy_reveal, season4_track_tier_list, \
-                season4_track_rankings, season4_ROTY_award
+                season4_track_rankings, season4_ROTY_award, season4_power_rankings_graph
 
 def HomePageNews():
     st.header("The Alternative F1 League")
@@ -22,25 +22,10 @@ def HomePageNews():
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
 
-    #region Latest News
-    # latest_news = [
-    #     {
-    #         "title": "",
-    #         "text": "",
-    #         "img": "./Images/Driver_Lineup.png"
-    #     },
-    # ]
-    
-    # carousel(items=latest_news, interval=20000)
-    # st.divider()
-    #endregion
-
     #region latest article
     
-    newapp = Image.open('./Images/NewApp.png')
-    st.subheader("New Season 4 App Live!")
-    st.markdown('''Pop open the sidebar and head to the new app where in season articles, results, and rankings will be found!''')
-    st.image(newapp)
+    season4_power_rankings_graph.graph()
+    season4_power_rankings_graph.preseason_article()
 
     #endregion
 
@@ -56,6 +41,11 @@ def HomePageNews():
             st.rerun()
 
     if st.session_state.show_all_content:
+
+        newapp = Image.open('./Images/NewApp.png')
+        st.subheader("New Season 4 App Live!")
+        st.markdown('''Pop open the sidebar and head to the new app where in season articles, results, and rankings will be found!''')
+        st.image(newapp)
 
         season4_ROTY_award.article()
 
