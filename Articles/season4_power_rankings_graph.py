@@ -90,7 +90,12 @@ def graph():
             suffix = {1: 'st', 2: 'nd', 3: 'rd'}.get(rank % 10, 'th')
         tick_labels.append(f"{rank}{suffix}")
 
-    fig.update_yaxes(title_text="Ranking", autorange="reversed", tickvals=tick_values, ticktext=tick_labels)
+    fig.update_yaxes(
+        title_text="Ranking", 
+        tickvals=tick_values, 
+        ticktext=tick_labels,
+        range=[max_rank + 0.5, min_rank - 0.5] 
+    )
     
     num_races = len(df_for_plotting.index)
     fig.update_xaxes(
