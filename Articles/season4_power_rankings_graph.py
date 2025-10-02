@@ -124,3 +124,24 @@ def preseason_article():
         ''',
         unsafe_allow_html=True,)
     st.divider()
+
+def bahrain_article():
+    date = "Thursday 10/02/2025"
+    author = "Patrick"
+
+    st.markdown('''**Bahrain Power Rankings**''')
+    st.markdown('''
+                Red Bull & Mercedes have decided to tango a bit in the mid-field. The teams have swapped back and forth yet again due to the performances from last night's race.
+
+                Red Bull primarily benefitted from the FIA removing Brently's penalty and the league reinstating MAtthew's finishing point.
+
+                Additionally, with strong qualifying and from winning the race, the VCARB team promoted themselves up the rankings. However, this is likely more due to McLaren's lack of a second #1 driver during the race with Travis disqualified by the FIA.
+                
+                Alpine remains the top contender at this stage even though they are in second overall in the Constructor Standings.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
