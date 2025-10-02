@@ -25,7 +25,7 @@ def HomePageNews():
     #region latest article
     
     season4_power_rankings_graph.graph()
-    season4_power_rankings_graph.preseason_article()
+    season4_power_rankings_graph.bahrain_article()    
 
     #endregion
 
@@ -46,6 +46,8 @@ def HomePageNews():
         st.subheader("New Season 4 App Live!")
         st.markdown('''Pop open the sidebar and head to the new app where in season articles, results, and rankings will be found!''')
         st.image(newapp)
+
+        season4_power_rankings_graph.preseason_article()
 
         season4_ROTY_award.article()
 
