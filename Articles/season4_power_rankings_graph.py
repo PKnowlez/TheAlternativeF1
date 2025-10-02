@@ -133,7 +133,7 @@ def bahrain_article():
     st.markdown('''
                 Red Bull & Mercedes have decided to tango a bit in the mid-field. The teams have swapped back and forth yet again due to the performances from last night's race.
 
-                Red Bull primarily benefitted from the FIA removing Brently's penalty and the league reinstating MAtthew's finishing point.
+                Red Bull primarily benefitted from the FIA removing Brently's penalty and the league reinstating Matthew's finishing point.
 
                 Additionally, with strong qualifying and from winning the race, the VCARB team promoted themselves up the rankings. However, this is likely more due to McLaren's lack of a second #1 driver during the race with Travis disqualified by the FIA.
                 

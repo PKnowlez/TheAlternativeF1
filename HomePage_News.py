@@ -42,12 +42,12 @@ def HomePageNews():
 
     if st.session_state.show_all_content:
 
+        season4_power_rankings_graph.preseason_article()
+
         newapp = Image.open('./Images/NewApp.png')
         st.subheader("New Season 4 App Live!")
         st.markdown('''Pop open the sidebar and head to the new app where in season articles, results, and rankings will be found!''')
         st.image(newapp)
-
-        season4_power_rankings_graph.preseason_article()
 
         season4_ROTY_award.article()
 
