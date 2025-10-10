@@ -2,6 +2,8 @@ import streamlit as st
 import HomePage_Regulations, HomePage_Settings
 
 def RegulationsSettings():
+    st.header('League Regulations and Settings')
+
     tabs = st.tabs([
         "Current League Regulations",
         "Current League Settings"
