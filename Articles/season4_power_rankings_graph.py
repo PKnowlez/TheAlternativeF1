@@ -100,7 +100,7 @@ def graph():
     num_races = len(df_for_plotting.index)
     fig.update_xaxes(
         title_text="Race",
-        range=[0, num_races-0.9] 
+        range=[0.25, num_races-0.7] 
     )
     
     fig.update_layout(legend_title_text='')
@@ -138,6 +138,27 @@ def bahrain_article():
                 Additionally, with strong qualifying and from winning the race, the VCARB team promoted themselves up the rankings. However, this is likely more due to McLaren's lack of a second #1 driver during the race with Travis disqualified by the FIA.
                 
                 Alpine remains the top contender at this stage even though they are in second overall in the Constructor Standings.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+def miami_article():
+    date = "Friday 10/10/2025"
+    author = "Patrick"
+
+    st.markdown('''**Miami Power Rankings**''')
+    st.markdown('''
+                After an incredible performance during the sprint, Mercedes had a lack luster outing in the main race. This keeps them low in the power rankings.
+
+                Red Bull and Ferrari made a swap due to the incredible performance by Brently who is solidifying himself as the team's number one early in the season.
+
+                After the preseason and Bahrain, it seemed the VCARB team had things sorted out and were rocketing towards the top. However, there is a chance they were just a shooting star.
+
+                Due to this, as well as having a full line up, McLaren overtakes into second place and nearly dislodges Alpine from their perch atop the rankings.
                 ''')
     st.markdown(
         f'''
