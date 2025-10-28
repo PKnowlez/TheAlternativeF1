@@ -166,3 +166,24 @@ def miami_article():
         ''',
         unsafe_allow_html=True,)
     st.divider()
+
+def spain_article():
+    date = "Monday 10/27/2025"
+    author = "Patrick"
+
+    st.markdown('''**Spain Power Rankings**''')
+    st.markdown('''
+                With the first break of the season over, the drivers took Spain's high speed circuit, where tire wear, dirty air, and a whole lot of flare occurred.
+
+                Mercedes took home its first full length race win of the season helping them move up in the power rankings. Alpine stays top dog though as McLaren falters and VCARB takes second place back.
+
+                In the midfield, Aston Martin and Ferrari stocks plummet as the teams faced minor setbacks during the race, while Red Bull seemed to have started to get things figured out.
+
+                All in all this was a turbulent race and the power rankings reflect that. In Mexico, expect to see more position swapping here as tire wear is again a major concern going into the race.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
