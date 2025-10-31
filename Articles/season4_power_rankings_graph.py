@@ -187,3 +187,22 @@ def spain_article():
         ''',
         unsafe_allow_html=True,)
     st.divider()
+
+def spain_article():
+    date = "Thursday 10/30/2025"
+    author = "The Intern"
+
+    st.markdown('''**Mexico Power Rankings**''')
+    st.markdown('''
+                There was nearly nothing to meme this week, so I decided to take the week off just like the Taveras. My boss told me I couldn't simply do nothing this week so I told him I would write something for this power ranking.
+
+                But like, honestly, this is the most dry thing on the planet. Who actually cares? Whatever. Alpine sucks so they dropped down. Eddie not being around is a joke, and I keep hearing Joshua yell, "LOCK IN JUNIOR," but then it's just echos because Eddie ain't locking in.
+
+                Mercedes is obviously on the rise, but the boss said something about how the math doesn't let them leap frog a bunch of positions. Math sucks. Anyway, enjoy the rankings, at least its colorful.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
