@@ -206,3 +206,24 @@ def spain_article():
         ''',
         unsafe_allow_html=True,)
     st.divider()
+
+def baku_article():
+    date = "Sunday 11/9/2025"
+    author = "Patrick"
+
+    st.markdown('''**Baku Power Rankings**''')
+    st.markdown('''
+                Mercedes is on the rise! Back-to-back wins, both drivers in the Top 5, and some staggering consistency over the last few races has them unanimoulsy voted up another rank from our power rankers.
+
+                Alpine jumps back to the top slot as they overtake a slowing VCARB. McLaren began receiving more upward votes this week as well as their top driver began to pursue the podium again.
+
+                Further down the field, Red Bull is a casualty of the streaking Mercedes duo. In reality they earned strong votes this week but simply were snuffed out by the rising rookies. 
+                
+                Aston Martin and Ferrari remain where they are at in the rankings, but there are rumblings to have Ferrari overtake Aston Martin if they continue their current trajectory.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
