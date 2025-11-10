@@ -11,6 +11,14 @@ import Sidebar, Functions, HomePage_News, Regulations, Season, ConstructorAllTim
 ## ----- App Format ----- ##
 st.set_page_config(page_title="The Alternative F1", initial_sidebar_state="expanded", layout="wide")
 
+st.markdown(
+    """
+    <meta name="application-name" content="The Alternative F1">
+    <meta name="apple-mobile-web-app-title" content="The Alternative F1">
+    """,
+    unsafe_allow_html=True
+)
+
 selection = Sidebar.Sidebar()
 NumSeasons = 3
 
