@@ -234,11 +234,11 @@ def austriaR_article():
 
     st.markdown('''**Austria (Reverse) Power Rankings**''')
     st.markdown('''
-                The duo at Mercedes has put a signature on the tail end of the first half of the season. Three wins in a row for Jairo and a podium and multiple top 5 finished for Jaden.
+                The duo at Mercedes has put a signature on the tail end of the first half of the season. Three wins in a row for Jairo and a podium and multiple top 5 finishes for Jaden.
 
                 Due to this, they've continued to earn their incredible swing in the power rankings. This also means that someone had to move down in the rankings. This week's victim is last season's runner up, McLaren.
 
-                The papaya duo has faced a turbulent start to the season, but whispers around the paddock suggest they may soon lock in with additional practice and new sim racng hardware in hand.
+                The papaya duo has faced a turbulent start to the season, but whispers around the paddock suggest they may soon lock in with additional practice and new sim racing hardware in hand.
 
                 All the other teams stayed put this week during the power rankings. However, it is likely we see additional shifts in the coming weeks with two sprints on the horizon.
                 ''')
