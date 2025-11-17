@@ -9,7 +9,20 @@ import plotly.express as px
 import Sidebar, Functions, HomePage_News, Regulations, Season, ConstructorAllTime, DriverAllTime, RacesAllTime
 
 ## ----- App Format ----- ##
-st.set_page_config(initial_sidebar_state="expanded", layout="wide")
+st.set_page_config(page_title="The Alternative F1", initial_sidebar_state="expanded", layout="wide")
+
+APP_NAME = "The Alternative F1"
+
+st.markdown(
+    f"""
+    <meta name="application-name" content="{APP_NAME}">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="{APP_NAME}">
+    <meta name="mobile-web-app-capable" content="yes">
+    """,
+    unsafe_allow_html=True
+)
 
 selection = Sidebar.Sidebar()
 NumSeasons = 3
