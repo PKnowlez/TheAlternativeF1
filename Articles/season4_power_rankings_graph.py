@@ -248,3 +248,24 @@ def austriaR_article():
         ''',
         unsafe_allow_html=True,)
     st.divider()
+
+def spa_article():
+    date = "Monday 12/01/2025"
+    author = "Patrick"
+
+    st.markdown('''**Spa Power Rankings**''')
+    st.markdown('''
+                That was quite the race. And the results of the power rankings might suprise a few folks. However, VCARB was unanimously voted the #1 team from the time out in Spa.
+
+                Realistically, the Mercedes duo could have been way up there too, but their lack luster performance in the main race set them back.
+
+                Alpine seems to have fallen from the power ranker's good graces as they recieved their lowest votes yet.
+
+                Other teams remain the same as they performed as expected against their peers during the sprint and race.                
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
