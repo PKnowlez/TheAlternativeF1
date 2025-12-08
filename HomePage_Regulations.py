@@ -57,7 +57,7 @@ def HomePageRegulations():
     st.markdown(html_table, unsafe_allow_html=True)
     st.markdown(
         f""" <p style="color:lightgray;">
-        *This regulation only applies after the first 2 laps of the race or restart. If reckless driving occurs during a start or restart, the incident will be reviewed per request of the driver who's race was endangered or ruined.
+        *This regulation only applies after the first 2 laps of the race or restart. If reckless driving occurs during a start or restart, the incident will be reviewed per request of the driver who's race was endangered or ruined. <br>
         **This regulation will be modified for the final race of the season to penalize the driver on their finishing position in the final race, rather than carrying over to the next season.
         </p>
         """, unsafe_allow_html=True,)
