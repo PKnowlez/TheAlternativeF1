@@ -25,7 +25,7 @@ def HomePageNews():
     #region latest article
     
     season4_power_rankings_graph.graph()
-    season4_power_rankings_graph.spa_article()   
+    season4_power_rankings_graph.brazil_austria_article()   
 
     #endregion
 
@@ -41,6 +41,8 @@ def HomePageNews():
             st.rerun()
 
     if st.session_state.show_all_content:
+
+        season4_power_rankings_graph.spa_article() 
 
         season4_power_rankings_graph.austriaR_article()  
 

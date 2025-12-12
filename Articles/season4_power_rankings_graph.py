@@ -269,3 +269,24 @@ def spa_article():
         ''',
         unsafe_allow_html=True,)
     st.divider()
+
+def brazil_austria_article():
+    date = "Thursday 12/11/2025"
+    author = "Patrick"
+
+    st.markdown('''**Brazil & Austria Power Rankings**''')
+    st.markdown('''
+                Two races worth of power rankings for the price of one. Last year's title heavy weights have fallen off in the voting during these two rounds of the season.
+
+                Both Alpine and McLaren are receiving less and less favorable votes as the season progresses. However, Mercedes continues to rise in the polls.
+
+                Both Red Bull and Ferrari have begun to make headway in the rankings as well with Red Bull making it back into 4th and Ferrari finally getting out of last place.
+
+                With five races to go, the rankings are becoming increasingly accurate for the final championship standings.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
