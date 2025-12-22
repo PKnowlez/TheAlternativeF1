@@ -290,3 +290,24 @@ def brazil_austria_article():
         ''',
         unsafe_allow_html=True,)
     st.divider()
+
+def zandvoort_article():
+    date = "Monday 12/22/2025"
+    author = "Patrick"
+
+    st.markdown('''**Zadnvoort Power Rankings**''')
+    st.markdown('''
+                Four races to go and we have a very stable week in the rankings. No shofts across the board. However, Mercedes is still a favorite to take the number #1 spot sometime soon.
+
+                The Silver Arrows did not take the lead this week due to a less than nominal performance from Jairo which did not give the committee rationale to propel them over VCARB just yet.
+
+                Additionally, with 188 points remaining in the season, teams down to McLaren are still in the hunt mathematically for the championship and more importantly, every single team is still in the race for 2nd and 3rd.
+
+                More on this in an upcoming article about rumors and standings. Stay tuned.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
