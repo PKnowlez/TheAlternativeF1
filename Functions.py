@@ -51,6 +51,10 @@ def PointTotals(season):
     race_points = []
     for i in range(len(schedule)):
         race_name = schedule['Race'].iloc[i]
+
+        if race_name.startswith(('Pre', 'Post')):
+            continue
+
         races.append(race_name)
         race_place.append(race_name+place_suffix)
         race_qualifying.append(race_name+qualifying_suffix)

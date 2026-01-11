@@ -311,3 +311,24 @@ def zandvoort_article():
         ''',
         unsafe_allow_html=True,)
     st.divider()
+
+def jeddah_vegas_article():
+    date = "Sunday 01/11/2026"
+    author = "Patrick"
+
+    st.markdown('''**Jeddah & Las Vegas Power Rankings**''')
+    st.markdown('''
+                With just two races to go, last week's double header really shook up the power rankings. Teams like Red Bull and VCARB lost out on their previous standings in the rankings.
+
+                While teams like Mercedes and Ferrari gained remarkable amounts from the street race showdown.
+
+                Alpine and Aston Martin stayed steady in their rankings, but qualifying and other aspects of Aston Martin's outing did make the voting committee consider boosting their position.
+
+                Finally, McLaren gained a spot but then levelled off due to a voting gap between Alpine and McLaren.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()

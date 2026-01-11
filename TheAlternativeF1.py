@@ -40,6 +40,9 @@ elif selection == "Season 2":
 elif selection == "Season 3":
     season = 3
     Season.SeasonPage(season)
+elif selection == "Season 4":
+    season = 4
+    Season.SeasonPage(season)
 elif selection == "All Time Driver Statistics":
     DriverAllTime.DriverStats(NumSeasons,'Driver')
 elif selection == "All Time Constructor Statistics":
