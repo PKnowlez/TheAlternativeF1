@@ -5,7 +5,9 @@ from Articles import season4_track_overview, season4_schedule_reveal, season4_tr
                 season4_track_rankings, season4_ROTY_award, season4_power_rankings_graph
 
 def HomePageNews():
-    st.header("The Alternative F1 League")
+    # st.header("The Alternative F1 League")
+    logo = Image.open("./Images/TheAlternativeBaseLogo.png")
+    st.image(logo)
     # Your custom CSS for the divider
     st.markdown("""
     <style>
