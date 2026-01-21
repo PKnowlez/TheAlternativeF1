@@ -332,3 +332,24 @@ def jeddah_vegas_article():
         ''',
         unsafe_allow_html=True,)
     st.divider()
+
+def abu_dhabi_article():
+    date = "Tuesday 01/20/2026"
+    author = "Patrick"
+
+    st.markdown('''**Abu Dhabi Power Rankings**''')
+    st.markdown('''
+                One race left. One more chance to prove the strength of each constructor.
+
+                Out in Abu Dhabi the Red Bull team fought back to close the gap on Ferrari. Due to this, they polled higher this week.
+
+                Although Red Bull and Ferrari swapped places, the rest of the rankings remained the same.
+
+                The VCARB duo and the Mercedes duo are nearly tied for first, but someone must sit on top and so these are the rankings going into the final race of the season.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
