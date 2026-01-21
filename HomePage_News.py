@@ -27,7 +27,7 @@ def HomePageNews():
     #region latest article
     
     season4_power_rankings_graph.graph()
-    season4_power_rankings_graph.jeddah_vegas_article()   
+    season4_power_rankings_graph.abu_dhabi_article()  
 
     #endregion
 
@@ -43,6 +43,8 @@ def HomePageNews():
             st.rerun()
 
     if st.session_state.show_all_content:
+
+        season4_power_rankings_graph.jeddah_vegas_article()  
 
         season4_power_rankings_graph.zandvoort_article()
 
