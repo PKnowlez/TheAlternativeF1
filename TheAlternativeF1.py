@@ -25,7 +25,7 @@ st.markdown(
 )
 
 selection = Sidebar.Sidebar()
-NumSeasons = 3
+NumSeasons = 4
 
 if selection == "Home Page":
     HomePage_News.HomePageNews()
