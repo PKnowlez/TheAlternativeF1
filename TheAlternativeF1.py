@@ -7,6 +7,9 @@ import plotly.graph_objects as go
 import streamlit as st
 import plotly.express as px
 import Sidebar, Functions, HomePage_News, Regulations, Season, ConstructorAllTime, DriverAllTime, RacesAllTime
+from Season1.F1Season1 import Season1
+from Season2.F1Season2 import Season2
+from Season3.F1Season3 import Season3
 
 ## ----- App Format ----- ##
 st.set_page_config(page_title="The Alternative F1", initial_sidebar_state="expanded", layout="wide")
@@ -32,14 +35,11 @@ if selection == "Home Page":
 elif selection == "Regulations & Settings":
     Regulations.RegulationsSettings()
 elif selection == "Season 1":
-    season = 1
-    Season.SeasonPage(season)
+    Season1()
 elif selection == "Season 2":
-    season = 2
-    Season.SeasonPage(season)
+    Season2()
 elif selection == "Season 3":
-    season = 3
-    Season.SeasonPage(season)
+    Season3()
 elif selection == "Season 4":
     season = 4
     Season.SeasonPage(season)
@@ -48,7 +48,7 @@ elif selection == "All Time Driver Statistics":
 elif selection == "All Time Constructor Statistics":
     ConstructorAllTime.ConstructorStats(NumSeasons,'Team')
 elif selection == "All Time Race Results":
-    RacesAllTime.RaceStats(NumSeasons)
+    RacesAllTime.RaceStats(NumSeasons)    
 else:
     st.subheader("Welcome to The Alternative's F1 League")
 
