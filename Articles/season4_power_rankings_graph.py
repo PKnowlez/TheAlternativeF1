@@ -30,7 +30,7 @@ def graph():
         'Haas': 'gray',
     } 
 
-    logos_folder = Path("Images")
+    logos_folder = Path("Images/Season4")
     team_images = {
         'Alpine': logos_folder / 'Alpine.png',
         'Aston Martin': logos_folder / 'Aston_Martin.png',
