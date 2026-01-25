@@ -27,7 +27,7 @@ def HomePageNews():
     #region latest article
     
     season4_power_rankings_graph.graph()
-    season4_power_rankings_graph.abu_dhabi_article()  
+    season4_power_rankings_graph.monza_article()
 
     #endregion
 
@@ -43,26 +43,30 @@ def HomePageNews():
             st.rerun()
 
     if st.session_state.show_all_content:
+        
+        with st.expander("Power Rankings"):
 
-        season4_power_rankings_graph.jeddah_vegas_article()  
+            season4_power_rankings_graph.abu_dhabi_article() 
 
-        season4_power_rankings_graph.zandvoort_article()
+            season4_power_rankings_graph.jeddah_vegas_article()  
 
-        season4_power_rankings_graph.brazil_austria_article() 
+            season4_power_rankings_graph.zandvoort_article()
 
-        season4_power_rankings_graph.spa_article() 
+            season4_power_rankings_graph.brazil_austria_article() 
 
-        season4_power_rankings_graph.austriaR_article()  
+            season4_power_rankings_graph.spa_article() 
 
-        season4_power_rankings_graph.baku_article()
+            season4_power_rankings_graph.austriaR_article()  
 
-        season4_power_rankings_graph.spain_article()   
+            season4_power_rankings_graph.baku_article()
 
-        season4_power_rankings_graph.miami_article()  
+            season4_power_rankings_graph.spain_article()   
 
-        season4_power_rankings_graph.bahrain_article()
+            season4_power_rankings_graph.miami_article()  
 
-        season4_power_rankings_graph.preseason_article()
+            season4_power_rankings_graph.bahrain_article()
+
+            season4_power_rankings_graph.preseason_article()
 
         newapp = Image.open('./Images/NewApp.png')
         st.subheader("New Season 4 App Live!")

@@ -353,3 +353,20 @@ def abu_dhabi_article():
         ''',
         unsafe_allow_html=True,)
     st.divider()
+
+def monza_article():
+    date = "Saturday 01/24/2026"
+    author = "Patrick"
+
+    st.markdown('''**Monza & End of Season Power Rankings**''')
+    st.markdown('''
+                With the finale complete, we set the power rankings to be in line with the final points standings for all of the teams.
+
+                Thank you all for enjoying this season with us. Until next time.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
