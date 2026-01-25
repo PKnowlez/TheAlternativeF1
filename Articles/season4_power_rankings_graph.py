@@ -4,6 +4,7 @@ from PIL import Image
 import pandas as pd
 import base64
 from pathlib import Path
+from streamlit_comments import st_comments
 
 # Helper function to encode local images to base64
 def image_to_base64(image_path):
@@ -370,3 +371,13 @@ def monza_article():
         ''',
         unsafe_allow_html=True,)
     st.divider()
+
+    # event = st_comments(
+    #     key="test",
+    #     currentUserId="01a",
+    #     currentUserFullName="Riya Negi",
+    #     titleStyle={ "display": "none" },
+    #     hrStyle={ "display": "none" },
+    #     commentData=[],
+    #     customNoComment=" ",
+    # )
