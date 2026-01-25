@@ -36,7 +36,8 @@ def Sidebar():
 
         if not st.session_state.get("authenticated"):
             # Tabs for different auth actions
-            tab1, tab2, tab3 = st.tabs(["Login", "Sign Up", "Reset"])
+            # tab1, tab2, tab3 = st.tabs(["Login", "Sign Up", "Reset"])
+            tab1, tab2 = st.tabs(["Login", "Sign Up"])
 
             with tab1:
                 u = st.text_input("User")
@@ -61,18 +62,18 @@ def Sidebar():
                         save_user(new_u, new_p)
                         st.success("Account created! Go to Login tab.")
 
-            with tab3:
-                res_u = st.text_input("Username to Reset")
-                res_p = st.text_input("New Password", type="password")
-                # In a real app, you'd send an email here. 
-                # For now, we'll just overwrite if they know the username.
-                if st.button("Update Password"):
-                    users = load_users()
-                    if res_u in users:
-                        save_user(res_u, res_p)
-                        st.success("Password updated!")
-                    else:
-                        st.error("User not found.")
+            # with tab3:
+            #     res_u = st.text_input("Username to Reset")
+            #     res_p = st.text_input("New Password", type="password")
+            #     # In a real app, you'd send an email here. 
+            #     # For now, we'll just overwrite if they know the username.
+            #     if st.button("Update Password"):
+            #         users = load_users()
+            #         if res_u in users:
+            #             save_user(res_u, res_p)
+            #             st.success("Password updated!")
+            #         else:
+            #             st.error("User not found.")
         else:
             st.write(f"Logged in as: **{st.session_state.username}**")
             if st.button("Logout"):
