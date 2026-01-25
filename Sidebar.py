@@ -4,7 +4,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 from PIL import Image
 
-logo = Image.open("./Images/TheAlternativeBaseLogo.png")
+logo = Image.open("./Images/The Alternative F1 NEW Logo.png")
 
 def Sidebar():
     with st.sidebar:

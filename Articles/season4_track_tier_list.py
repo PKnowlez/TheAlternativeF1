@@ -3,8 +3,8 @@ import base64
 from streamlit_carousel import carousel
 from PIL import Image
 
-image = Image.open("./Images/Track_Tier_List.png")
-gif = open('./Images/deal_with_it.gif','rb')
+image = Image.open("./Images/Season4/Track_Tier_List.png")
+gif = open('./Images/Season4/deal_with_it.gif','rb')
 contents = gif.read()
 data_url = base64.b64encode(contents).decode('utf-8')
 

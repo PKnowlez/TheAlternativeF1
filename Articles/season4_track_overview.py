@@ -3,17 +3,17 @@ import base64
 from streamlit_carousel import carousel
 from PIL import Image
 
-tracks_1 = Image.open('./Images/Tracks_1.png')
-tracks_2 = Image.open('./Images/Tracks_2.png')
-tracks_3 = Image.open('./Images/Tracks_3.png')
-tracks_4 = Image.open('./Images/Tracks_4.png')
-tracks_5 = Image.open('./Images/Tracks_5.png')
-tracks_6 = Image.open('./Images/Tracks_6.png')
-miami = Image.open('./Images/track_reveal_miami.png')
-surfer_gif = open('./Images/surfer.gif','rb')
+tracks_1 = Image.open('./Images/Season4/Tracks_1.png')
+tracks_2 = Image.open('./Images/Season4/Tracks_2.png')
+tracks_3 = Image.open('./Images/Season4/Tracks_3.png')
+tracks_4 = Image.open('./Images/Season4/Tracks_4.png')
+tracks_5 = Image.open('./Images/Season4/Tracks_5.png')
+tracks_6 = Image.open('./Images/Season4/Tracks_6.png')
+miami = Image.open('./Images/Season4/track_reveal_miami.png')
+surfer_gif = open('./Images/Season4/surfer.gif','rb')
 contents = surfer_gif.read()
 data_url_surfer = base64.b64encode(contents).decode('utf-8')
-no_mikey = Image.open('./Images/no_mikey.png')
+no_mikey = Image.open('./Images/Season4/no_mikey.png')
 
 def article():
     date = "Friday 8/15/2025"

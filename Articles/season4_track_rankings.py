@@ -5,9 +5,9 @@ from PIL import Image
 import pandas as pd
 import plotly.graph_objects as go
 
-intern = Image.open("./Images/Intern Track Ranking.png")
-average = Image.open("./Images/Average Votes.png")
-most = Image.open("./Images/Most Votes.png")
+intern = Image.open("./Images/Season4/Intern Track Ranking.png")
+average = Image.open("./Images/Season4/Average Votes.png")
+most = Image.open("./Images/Season4/Most Votes.png")
 
 rankings_order = {
     "Week":     [
@@ -27,72 +27,72 @@ carousel_images = [
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W1 - Bahrain.png"
+                "img": "./Images/Season4/W1 - Bahrain.png"
             },
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W2 - Miami.png"
+                "img": "./Images/Season4/W2 - Miami.png"
             },
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W3 - Spain.png"
+                "img": "./Images/Season4/W3 - Spain.png"
             },
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W4 - Mexico.png"
+                "img": "./Images/Season4/W4 - Mexico.png"
             },
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W5 - Baku.png"
+                "img": "./Images/Season4/W5 - Baku.png"
             },
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W6 - Austria Reverse.png"
+                "img": "./Images/Season4/W6 - Austria Reverse.png"
             },
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W7 - Spa.png"
+                "img": "./Images/Season4/W7 - Spa.png"
             },
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W8 - Brazil.png"
+                "img": "./Images/Season4/W8 - Brazil.png"
             },
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W9 - Austria.png"
+                "img": "./Images/Season4/W9 - Austria.png"
             },
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W10 - Zandvoort.png"
+                "img": "./Images/Season4/W10 - Zandvoort.png"
             },
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W11 - Jeddah.png"
+                "img": "./Images/Season4/W11 - Jeddah.png"
             },
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W12 - Las Vegas.png"
+                "img": "./Images/Season4/W12 - Las Vegas.png"
             },
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W13 - Abu Dhabi.png"
+                "img": "./Images/Season4/W13 - Abu Dhabi.png"
             },
             {
                 "title": "",
                 "text": "",
-                "img": "./Images/W14 - Imola.png"
+                "img": "./Images/Season4/W14 - Imola.png"
             },
         ]
 
@@ -203,7 +203,7 @@ def create_step_graph(data):
     return fig
 
 # ----- How to add a GIF: ----- #
-# gif = open('./Images/surfer.gif','rb')
+# gif = open('./Images/Season4/surfer.gif','rb')
 # contents = gif.read()
 # data_url = base64.b64encode(contents).decode('utf-8')
 # st.markdown(f'<img src="data:image/gif;base64,{data_url}" alt="Your GIF">', unsafe_allow_html=True)
@@ -213,12 +213,12 @@ def create_step_graph(data):
 #             {
 #                 "title": "",
 #                 "text": "",
-#                 "img": "./Images/image.png"
+#                 "img": "./Images/Season4/image.png"
 #             },
 #             {
 #                 "title": "",
 #                 "text": "",
-#                 "img": "./Images/image.png"
+#                 "img": "./Images/Season4/image.png"
 #             },
 #         ]
 

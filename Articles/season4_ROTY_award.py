@@ -3,8 +3,8 @@ import base64
 from streamlit_carousel import carousel
 from PIL import Image
 
-image = Image.open("./Images/Rookie Button.png")
-image2 = Image.open("./Images/New Foe.png")
+image = Image.open("./Images/Season4/Rookie Button.png")
+image2 = Image.open("./Images/Season4/New Foe.png")
 
 def article():
     date = "Monday 09/08/2025"
