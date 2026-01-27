@@ -4,6 +4,7 @@ from streamlit_carousel import carousel
 from PIL import Image
 
 S4Trophy = Image.open("./Season4/Images/TrophyS4 Text.png")
+S4TrophyPhoto = Image.open("./Season4/Images/TrophyS4 Photo.jpg")
 Monaco = Image.open("./Season4/Images/Monaco Trophy Wide.png")
 
 def article():
@@ -12,15 +13,16 @@ def article():
 
     st.subheader('''Race Week: Monaco''')
     st.markdown('''
-                This week the league takes to the streets of Monte Carlo, where drivers will be tested around the tightest street circuit on the calendar. The ultimate racing challenge. A driver's skill, attention, and guts will be tesxted by this iconic circuit.
+                This week the league takes to the streets of Monte Carlo, where drivers will be tested around the tightest street circuit on the calendar. The ultimate racing challenge. A driver's skill, attention, and guts will be tested by this iconic circuit.
 
-                Because this is a post-season race, there are no points. Only honor, glory, and bragging rights are on the line during this race. On top of the bragging rights, the winner will be awarded a replica Monaco trophy with some Alternative styling.
+                Due to this being a post-season race, there are no points, no, only honor, glory, and bragging rights are on the line during this race. On top of the bragging rights, the winner will be awarded an Alternative sylized Monaco trophy.
 
                 With all this said, it is about time to dissect the championship trophies earned by our season champions as well as the special Monaco trophy.
 
                 **WHAT'S IN THE CHAMPION'S TROPHY**
                 ''')
     st.image(S4Trophy)
+    st.image(S4TrophyPhoto)
     st.markdown('''**MONACO TROPHY**''')
     st.image(Monaco)
     st.markdown(

@@ -3,7 +3,7 @@ from PIL import Image
 from streamlit_carousel import carousel
 from Articles import season4_track_overview, season4_schedule_reveal, season4_trophy_reveal, season4_track_tier_list, \
                 season4_track_rankings, season4_ROTY_award, season4_power_rankings_graph
-from Season4.Articles import season4_Monza_Recap
+from Season4.Articles import season4_Monza_Recap, season4_Trophies
 
 def HomePageNews():
     # st.header("The Alternative F1 League")
@@ -27,7 +27,7 @@ def HomePageNews():
 
     #region latest article
     
-    season4_Monza_Recap.article()
+    season4_Trophies.article()
 
     #endregion
 
@@ -45,6 +45,8 @@ def HomePageNews():
     if st.session_state.show_all_content:
         
         with st.expander("Power Rankings"):
+
+            season4_Monza_Recap.article()
 
             season4_power_rankings_graph.graph()
             
