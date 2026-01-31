@@ -3,31 +3,31 @@ from PIL import Image
 from streamlit_carousel import carousel
 from Articles import season4_track_overview, season4_schedule_reveal, season4_trophy_reveal, season4_track_tier_list, \
                 season4_track_rankings, season4_ROTY_award, season4_power_rankings_graph
-from Season4.Articles import season4_Monza_Recap, season4_Trophies
+from Season4.Articles import season4_Monza_Recap, season4_Trophies, season4_Monaco_Recap
 
 def HomePageNews():
-    # st.header("The Alternative F1 League")
-    logo = Image.open("./Images/TheAlternativeBaseLogo.png")
-    st.image(logo)
-    # Your custom CSS for the divider
-    st.markdown("""
-    <style>
-    .colored-divider {
-        border-top: 3px solid #00b4da;
-        border-radius: 3px;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+    # # st.header("The Alternative F1 League")
+    # logo = Image.open("./Images/TheAlternativeBaseLogo.png")
+    # st.image(logo)
+    # # Your custom CSS for the divider
+    # st.markdown("""
+    # <style>
+    # .colored-divider {
+    #     border-top: 3px solid #00b4da;
+    #     border-radius: 3px;
+    # }
+    # </style>
+    # """, unsafe_allow_html=True)
 
-    # Use the custom divider
-    st.markdown('<div class="colored-divider"></div>', unsafe_allow_html=True)
+    # # Use the custom divider
+    # st.markdown('<div class="colored-divider"></div>', unsafe_allow_html=True)
 
     if 'show_all_content' not in st.session_state:
         st.session_state.show_all_content = False
 
     #region latest article
     
-    season4_Trophies.article()
+    season4_Monaco_Recap.article()
 
     #endregion
 
@@ -43,10 +43,12 @@ def HomePageNews():
             st.rerun()
 
     if st.session_state.show_all_content:
+
+        season4_Trophies.article()
+
+        season4_Monza_Recap.article()
         
         with st.expander("Power Rankings"):
-
-            season4_Monza_Recap.article()
 
             season4_power_rankings_graph.graph()
             

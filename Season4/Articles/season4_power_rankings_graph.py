@@ -1,0 +1,383 @@
+import streamlit as st
+import plotly.express as px
+from PIL import Image
+import pandas as pd
+import base64
+from pathlib import Path
+from streamlit_comments import st_comments
+
+# Helper function to encode local images to base64
+def image_to_base64(image_path):
+    """Reads an image file and returns a base64 encoded string."""
+    with open(image_path, "rb") as img_file:
+        encoded_string = base64.b64encode(img_file.read()).decode()
+    return f"data:image/png;base64,{encoded_string}"
+
+def graph():
+    st.subheader('''Season 4 Constructor's Power Rankings''')
+    df = pd.read_excel("The Alternative F1 Season 4 Power Rankings (Responses).xlsx", sheet_name="Final Ranking")
+    df_for_plotting = df.set_index('Race')
+
+    team_colors = {
+        'Alpine': 'hotpink', 
+        'Aston Martin': 'teal',
+        'Ferrari': 'red',
+        'McLaren': 'darkorange',
+        'Red Bull': 'darkblue',
+        'VCARB': 'blue',
+        'AlphaTauri': 'LightSlateGray',
+        'Alfa Romeo': 'Maroon',
+        'Mercedes': 'black',
+        'Haas': 'gray',
+    } 
+
+    logos_folder = Path("Images/Season4")
+    team_images = {
+        'Alpine': logos_folder / 'Alpine.png',
+        'Aston Martin': logos_folder / 'Aston_Martin.png',
+        'Ferrari': logos_folder / 'Ferrari.png',
+        'McLaren': logos_folder / 'McLaren.png',
+        'Red Bull': logos_folder / 'Red_Bull.png',
+        'VCARB': logos_folder / 'VCARB.png',
+        'AlphaTauri': logos_folder / 'AlphaTauri.png',
+        'Alfa Romeo': logos_folder / 'Alfa_Romeo.png',
+        'Mercedes': logos_folder / 'Mercedes.png',
+        'Haas': logos_folder / 'Haas.png',
+    }
+
+    # Create the Plotly figure with markers DISABLED
+    fig = px.line(df_for_plotting, 
+                  x=df_for_plotting.index, 
+                  y=df_for_plotting.columns,
+                  markers=False, # UPDATE 1: Set to False to disable markers
+                  color_discrete_map=team_colors,
+                  labels={'variable': 'Team', 'value': 'Place'})
+    
+    value=30
+    fig.update_traces(line=dict(width=value))
+
+    # Loop to add encoded logos
+    for trace in fig.data:
+        # UPDATE 2: Removed all code for marker sizing and coloring
+        
+        team_name = trace.name
+        image_path = team_images.get(team_name)
+
+        if image_path and Path(image_path).is_file():
+            encoded_image = image_to_base64(image_path)
+            last_x = trace.x[-1]
+            last_y = trace.y[-1]
+
+            fig.add_layout_image(
+                dict(
+                    source=encoded_image,
+                    xref="x", yref="y",
+                    x=last_x, y=last_y,
+                    sizex=0.9, sizey=0.9,
+                    xanchor="center", yanchor="middle",
+                    layer="above"
+                )
+            )
+
+    # Axis formatting
+    min_rank = int(df_for_plotting.min().min())
+    max_rank = int(df_for_plotting.max().max())
+    tick_values = list(range(min_rank, max_rank + 1))
+    tick_labels = []
+    for rank in tick_values:
+        if 11 <= rank % 100 <= 13:
+            suffix = 'th'
+        else:
+            suffix = {1: 'st', 2: 'nd', 3: 'rd'}.get(rank % 10, 'th')
+        tick_labels.append(f"{rank}{suffix}")
+
+    fig.update_yaxes(
+        title_text="Ranking", 
+        tickvals=tick_values, 
+        ticktext=tick_labels,
+        range=[max_rank + 0.5, min_rank - 0.5] 
+    )
+    
+    num_races = len(df_for_plotting.index)
+    fig.update_xaxes(
+        title_text="Race",
+        range=[0.25, num_races-0.7] 
+    )
+    
+    fig.update_layout(legend_title_text='')
+    st.plotly_chart(fig, use_container_width=True)
+
+def preseason_article():
+    date = "Tuesday 09/30/2025"
+    author = "Patrick"
+
+    st.markdown('''**Preseason Power Rankings**''')
+    st.markdown('''
+                While the standings are useful, they do not tell the whole story of which teams are trending up throughout the season even without big wins or flashy moments.
+                
+                To kick off the season, the FIA and the race stewards have ranked each team. Initial rankings positioned teams where they finished last season. From there, the results of the preseason race and a few other factors shuffled the order a bit. Not much changed for our top three teams from last season, however Mercedes and Aston Martin both had strong performances, leading to minor shifts in the lower power rankings.
+                
+                As the season progresses, check back here for more updates on the power rankings.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+def bahrain_article():
+    date = "Thursday 10/02/2025"
+    author = "Patrick"
+
+    st.markdown('''**Bahrain Power Rankings**''')
+    st.markdown('''
+                Red Bull & Mercedes have decided to tango a bit in the mid-field. The teams have swapped back and forth yet again due to the performances from last night's race.
+
+                Red Bull primarily benefitted from the FIA removing Brently's penalty and the league reinstating Matthew's finishing point.
+
+                Additionally, with strong qualifying and from winning the race, the VCARB team promoted themselves up the rankings. However, this is likely more due to McLaren's lack of a second #1 driver during the race with Travis disqualified by the FIA.
+                
+                Alpine remains the top contender at this stage even though they are in second overall in the Constructor Standings.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+def miami_article():
+    date = "Friday 10/10/2025"
+    author = "Patrick"
+
+    st.markdown('''**Miami Power Rankings**''')
+    st.markdown('''
+                After an incredible performance during the sprint, Mercedes had a lack luster outing in the main race. This keeps them low in the power rankings.
+
+                Red Bull and Ferrari made a swap due to the incredible performance by Brently who is solidifying himself as the team's number one early in the season.
+
+                After the preseason and Bahrain, it seemed the VCARB team had things sorted out and were rocketing towards the top. However, there is a chance they were just a shooting star.
+
+                Due to this, as well as having a full line up, McLaren overtakes into second place and nearly dislodges Alpine from their perch atop the rankings.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+def spain_article():
+    date = "Monday 10/27/2025"
+    author = "Patrick"
+
+    st.markdown('''**Spain Power Rankings**''')
+    st.markdown('''
+                With the first break of the season over, the drivers took Spain's high speed circuit, where tire wear, dirty air, and a whole lot of flare occurred.
+
+                Mercedes took home its first full length race win of the season helping them move up in the power rankings. Alpine stays top dog though as McLaren falters and VCARB takes second place back.
+
+                In the midfield, Aston Martin and Ferrari stocks plummet as the teams faced minor setbacks during the race, while Red Bull seemed to have started to get things figured out.
+
+                All in all this was a turbulent race and the power rankings reflect that. In Mexico, expect to see more position swapping here as tire wear is again a major concern going into the race.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+def spain_article():
+    date = "Thursday 10/30/2025"
+    author = "The Intern"
+
+    st.markdown('''**Mexico Power Rankings**''')
+    st.markdown('''
+                There was nearly nothing to meme this week, so I decided to take the week off just like the Taveras. My boss told me I couldn't simply do nothing this week so I told him I would write something for this power ranking.
+
+                But like, honestly, this is the most dry thing on the planet. Who actually cares? Whatever. Alpine sucks so they dropped down. Eddie not being around is a joke, and I keep hearing Joshua yell, "LOCK IN JUNIOR," but then it's just echos because Eddie ain't locking in.
+
+                Mercedes is obviously on the rise, but the boss said something about how the math doesn't let them leap frog a bunch of positions. Math sucks. Anyway, enjoy the rankings, at least its colorful.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+def baku_article():
+    date = "Sunday 11/9/2025"
+    author = "Patrick"
+
+    st.markdown('''**Baku Power Rankings**''')
+    st.markdown('''
+                Mercedes is on the rise! Back-to-back wins, both drivers in the Top 5, and some staggering consistency over the last few races has them unanimoulsy voted up another rank from our power rankers.
+
+                Alpine jumps back to the top slot as they overtake a slowing VCARB. McLaren began receiving more upward votes this week as well as their top driver began to pursue the podium again.
+
+                Further down the field, Red Bull is a casualty of the streaking Mercedes duo. In reality they earned strong votes this week but simply were snuffed out by the rising rookies. 
+                
+                Aston Martin and Ferrari remain where they are at in the rankings, but there are rumblings to have Ferrari overtake Aston Martin if they continue their current trajectory.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+def austriaR_article():
+    date = "Sunday 11/16/2025"
+    author = "Patrick"
+
+    st.markdown('''**Austria (Reverse) Power Rankings**''')
+    st.markdown('''
+                The duo at Mercedes has put a signature on the tail end of the first half of the season. Three wins in a row for Jairo and a podium and multiple top 5 finishes for Jaden.
+
+                Due to this, they've continued to earn their incredible swing in the power rankings. This also means that someone had to move down in the rankings. This week's victim is last season's runner up, McLaren.
+
+                The papaya duo has faced a turbulent start to the season, but whispers around the paddock suggest they may soon lock in with additional practice and new sim racing hardware in hand.
+
+                All the other teams stayed put this week during the power rankings. However, it is likely we see additional shifts in the coming weeks with two sprints on the horizon.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+def spa_article():
+    date = "Monday 12/01/2025"
+    author = "Patrick"
+
+    st.markdown('''**Spa Power Rankings**''')
+    st.markdown('''
+                That was quite the race. And the results of the power rankings might suprise a few folks. However, VCARB was unanimously voted the #1 team from the time out in Spa.
+
+                Realistically, the Mercedes duo could have been way up there too, but their lack luster performance in the main race set them back.
+
+                Alpine seems to have fallen from the power ranker's good graces as they recieved their lowest votes yet.
+
+                Other teams remain the same as they performed as expected against their peers during the sprint and race.                
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+def brazil_austria_article():
+    date = "Thursday 12/11/2025"
+    author = "Patrick"
+
+    st.markdown('''**Brazil & Austria Power Rankings**''')
+    st.markdown('''
+                Two races worth of power rankings for the price of one. Last year's title heavy weights have fallen off in the voting during these two rounds of the season.
+
+                Both Alpine and McLaren are receiving less and less favorable votes as the season progresses. However, Mercedes continues to rise in the polls.
+
+                Both Red Bull and Ferrari have begun to make headway in the rankings as well with Red Bull making it back into 4th and Ferrari finally getting out of last place.
+
+                With five races to go, the rankings are becoming increasingly accurate for the final championship standings.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+def zandvoort_article():
+    date = "Monday 12/22/2025"
+    author = "Patrick"
+
+    st.markdown('''**Zadnvoort Power Rankings**''')
+    st.markdown('''
+                Four races to go and we have a very stable week in the rankings. No shofts across the board. However, Mercedes is still a favorite to take the number #1 spot sometime soon.
+
+                The Silver Arrows did not take the lead this week due to a less than nominal performance from Jairo which did not give the committee rationale to propel them over VCARB just yet.
+
+                Additionally, with 188 points remaining in the season, teams down to McLaren are still in the hunt mathematically for the championship and more importantly, every single team is still in the race for 2nd and 3rd.
+
+                More on this in an upcoming article about rumors and standings. Stay tuned.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+def jeddah_vegas_article():
+    date = "Sunday 01/11/2026"
+    author = "Patrick"
+
+    st.markdown('''**Jeddah & Las Vegas Power Rankings**''')
+    st.markdown('''
+                With just two races to go, last week's double header really shook up the power rankings. Teams like Red Bull and VCARB lost out on their previous standings in the rankings.
+
+                While teams like Mercedes and Ferrari gained remarkable amounts from the street race showdown.
+
+                Alpine and Aston Martin stayed steady in their rankings, but qualifying and other aspects of Aston Martin's outing did make the voting committee consider boosting their position.
+
+                Finally, McLaren gained a spot but then levelled off due to a voting gap between Alpine and McLaren.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+def abu_dhabi_article():
+    date = "Tuesday 01/20/2026"
+    author = "Patrick"
+
+    st.markdown('''**Abu Dhabi Power Rankings**''')
+    st.markdown('''
+                One race left. One more chance to prove the strength of each constructor.
+
+                Out in Abu Dhabi the Red Bull team fought back to close the gap on Ferrari. Due to this, they polled higher this week.
+
+                Although Red Bull and Ferrari swapped places, the rest of the rankings remained the same.
+
+                The VCARB duo and the Mercedes duo are nearly tied for first, but someone must sit on top and so these are the rankings going into the final race of the season.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+def monza_article():
+    date = "Saturday 01/24/2026"
+    author = "Patrick"
+
+    st.markdown('''**Monza & End of Season Power Rankings**''')
+    st.markdown('''
+                With the finale complete, we set the power rankings to be in line with the final points standings for all of the teams.
+
+                Thank you all for enjoying this season with us. Until next time.
+                ''')
+    st.markdown(
+        f'''
+        <p style="color:lightgray;"> {date} - {author}</p>
+        ''',
+        unsafe_allow_html=True,)
+    st.divider()
+
+    # event = st_comments(
+    #     key="test",
+    #     currentUserId="01a",
+    #     currentUserFullName="Riya Negi",
+    #     titleStyle={ "display": "none" },
+    #     hrStyle={ "display": "none" },
+    #     commentData=[],
+    #     customNoComment=" ",
+    # )

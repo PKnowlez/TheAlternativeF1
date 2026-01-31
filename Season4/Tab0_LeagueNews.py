@@ -8,7 +8,8 @@ from Season4.Articles import season4_track_overview, season4_schedule_reveal, se
                 season4_AustriaR_Recap, season4_Spa_Week, season4_Spa_FIA, season4_Spa_Recap, season4_Brazil_Week, \
                 season4_Brazil_FIA, season4_Brazil_Recap_Austria_Week, season4_Austria_Recap, season4_Zadnvoort_Week, \
                 season4_Zandvoort_Recap, season4_Standings_Rumors, season4_JeddahVegas_Recap, season4_Abu_Dhabi_Week, \
-                season4_AbuDhabi_Recap, season4_Monza_Week, season4_Champions, season4_Monza_Recap, season4_Trophies
+                season4_AbuDhabi_Recap, season4_Monza_Week, season4_Champions, season4_Monza_Recap, season4_Trophies, \
+                season4_Monaco_Recap, season4_power_rankings_graph
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
@@ -16,7 +17,7 @@ def Tab0():
 
     #region --
 
-    season4_Trophies.article()
+    season4_Monaco_Recap.article()
 
     #endregion
     
@@ -33,7 +34,37 @@ def Tab0():
 
     if st.session_state.show_all_content:
 
+        season4_Trophies.article()
+
         season4_Monza_Recap.article()
+
+        with st.expander("Power Rankings"):
+
+            season4_power_rankings_graph.graph()
+            
+            season4_power_rankings_graph.monza_article()
+
+            season4_power_rankings_graph.abu_dhabi_article() 
+
+            season4_power_rankings_graph.jeddah_vegas_article()  
+
+            season4_power_rankings_graph.zandvoort_article()
+
+            season4_power_rankings_graph.brazil_austria_article() 
+
+            season4_power_rankings_graph.spa_article() 
+
+            season4_power_rankings_graph.austriaR_article()  
+
+            season4_power_rankings_graph.baku_article()
+
+            season4_power_rankings_graph.spain_article()   
+
+            season4_power_rankings_graph.miami_article()  
+
+            season4_power_rankings_graph.bahrain_article()
+
+            season4_power_rankings_graph.preseason_article()
 
         season4_Champions.article()
 
