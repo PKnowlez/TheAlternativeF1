@@ -97,7 +97,7 @@ def Tab2(races,df,race_place,race_points):
     
     with st.expander('Postseason: Monaco'):
         st.subheader("Winner: " + 'Josh' + " - " + 'VCARB')
-        preseason = {
+        postseason = {
             "Place":                ['1','2','DNF','DNF','DNF','DNF','DNF','DNF','DNF','DNF','DNF','DNF','DNS','DNS'],
             "Driver":               ['Josh','Matthew','Patrick','Erick','Jaden','Leo','Joshua','Jairo','Nick','Del','Eddie','Brently','Boz','Travis'],
             "Team":                 ['VCARB','Haas','VCARB','McLaren','Mercedes','Ferrari','Red Bull','Mercedes','McLaren','Aston Martin','Williams','Haas','Aston Martin','McLaren'],
@@ -107,3 +107,6 @@ def Tab2(races,df,race_place,race_points):
             "Most Overtakes":       ['Yes','-','-','-','-','-','-','-','-','-','-','-','-','-'],
             "Cleanest Driver":      ['Yes','-','-','-','-','-','-','-','-','-','-','-','-','-']
         }
+
+        postseason_df = pd.DataFrame(postseason)
+        st.dataframe(postseason_df, hide_index=True)  
