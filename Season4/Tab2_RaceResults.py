@@ -94,3 +94,16 @@ def Tab2(races,df,race_place,race_points):
                     st.dataframe(race_results_df, hide_index=True)
             else:
                 x = 0
+    
+    with st.expander('Postseason: Monaco'):
+        st.subheader("Winner: " + 'Josh' + " - " + 'VCARB')
+        preseason = {
+            "Place":                ['1','2','DNF','DNF','DNF','DNF','DNF','DNF','DNF','DNF','DNF','DNF','DNS','DNS'],
+            "Driver":               ['Josh','Matthew','Patrick','Erick','Jaden','Leo','Joshua','Jairo','Nick','Del','Eddie','Brently','Boz','Travis'],
+            "Team":                 ['VCARB','Haas','VCARB','McLaren','Mercedes','Ferrari','Red Bull','Mercedes','McLaren','Aston Martin','Williams','Haas','Aston Martin','McLaren'],
+            "Qualifying":           ['3','1','5','2','9','4','7','6','12','11','8','10','14','13'],
+            "Fastest Lap":          ['Yes','-','-','-','-','-','-','-','-','-','-','-','-','-'],
+            "Driver of the Day":    ['Yes','-','-','-','-','-','-','-','-','-','-','-','-','-'],
+            "Most Overtakes":       ['Yes','-','-','-','-','-','-','-','-','-','-','-','-','-'],
+            "Cleanest Driver":      ['Yes','-','-','-','-','-','-','-','-','-','-','-','-','-']
+        }
