@@ -9,7 +9,7 @@ from Season4.Articles import season4_track_overview, season4_schedule_reveal, se
                 season4_Brazil_FIA, season4_Brazil_Recap_Austria_Week, season4_Austria_Recap, season4_Zadnvoort_Week, \
                 season4_Zandvoort_Recap, season4_Standings_Rumors, season4_JeddahVegas_Recap, season4_Abu_Dhabi_Week, \
                 season4_AbuDhabi_Recap, season4_Monza_Week, season4_Champions, season4_Monza_Recap, season4_Trophies, \
-                season4_Monaco_Recap, season4_power_rankings_graph
+                season4_Monaco_Recap, season4_power_rankings_graph, season4_2026_Livery
 
 def Tab0():
     if 'show_all_content' not in st.session_state:
@@ -17,7 +17,7 @@ def Tab0():
 
     #region --
 
-    season4_Monaco_Recap.article()
+    season4_2026_Livery.article()
 
     #endregion
     
@@ -33,6 +33,8 @@ def Tab0():
             st.rerun()
 
     if st.session_state.show_all_content:
+
+        season4_Monaco_Recap.article()
 
         season4_Trophies.article()
 
