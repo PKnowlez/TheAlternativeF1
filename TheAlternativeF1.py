@@ -11,6 +11,7 @@ from Season1.F1Season1 import Season1
 from Season2.F1Season2 import Season2
 from Season3.F1Season3 import Season3
 from Season4.F1Season4 import Season4
+from Season5.F1Season5 import Season5
 
 ## ----- App Format ----- ##
 st.set_page_config(page_title="The Alternative F1", initial_sidebar_state="expanded", layout="wide")
@@ -43,6 +44,8 @@ elif selection == "Season 3":
     Season3()
 elif selection == "Season 4":
     Season4()
+elif selection == "Season 5":
+    Season5()
 # elif selection == "All Time Driver Statistics":
 #     DriverAllTime.DriverStats(NumSeasons,'Driver')
 # elif selection == "All Time Constructor Statistics":

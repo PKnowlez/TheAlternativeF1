@@ -54,7 +54,7 @@ def HomePageSettings():
                                     'Manual',
                                     'Off',
                                     'Simulation',
-                                    'Standard or Simulation*',
+                                    'Simulation',
                                     'On',
                                     'Disabled',
                                     'Disabled',
@@ -76,7 +76,7 @@ def HomePageSettings():
         ],
         "Setting":              [
                                     'On',
-                                    'Strict**',
+                                    'Strict*',
                                     'Off',
                                     'Immersive',
                                     'Increased',
@@ -146,10 +146,7 @@ def HomePageSettings():
     st.divider()
 
     st.markdown(
-        f""" <p style="color:lightgray;">*League officials are still determining best course of action for this setting.</p>
-        """, unsafe_allow_html=True,)
-    st.markdown(
-        f""" <p style="color:lightgray;">**Depending on the track this setting may be adjusted to ensure a competitive and enjoyable racing experience.</p>
+        f""" <p style="color:lightgray;">*Depending on the track this setting may be adjusted to ensure a competitive and enjoyable racing experience.</p>
         """, unsafe_allow_html=True,)
 
 def html_table_setup(list):
