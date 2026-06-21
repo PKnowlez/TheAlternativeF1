@@ -77,7 +77,7 @@ def HomePageSettings():
         "Setting":              [
                                     'On',
                                     'Strict*',
-                                    'Off',
+                                    'On',
                                     'Immersive',
                                     'Increased',
                                     'Immersive',
