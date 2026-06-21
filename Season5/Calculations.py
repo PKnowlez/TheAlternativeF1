@@ -42,13 +42,13 @@ def Calculations():
         'Alpine': 'hotpink', 
         'Aston Martin': 'teal',
         'Ferrari': 'red',
-        'McLaren': 'darkorange',
+        'McLaren': '#FF6A00',
         'Red Bull': 'darkblue',
         'VCARB': 'blue',
         'AlphaTauri': 'LightSlateGray',
         'Alfa Romeo': 'Maroon',
         'Mercedes': 'black',
-        'Haas': 'gray',
+        'Haas': 'white',
         'Audi':  '#A33E2C', #'#EB4526', (Actual Audi color, too close to Ferrari and McLaren)
         'Cadillac': "#FFEA00"
     } 
@@ -57,12 +57,12 @@ def Calculations():
     driver_colors = {
         'Joshua': 'darkblue',
         'Eddie': '#8888c9',
-        'Nick': 'darkorange', 
-        'Grayson': 'orange',
+        'Nick': "#FF6A00", 
+        'Grayson': "#FFAE00",
         'Patrick': "#FFEA00",
         'Josh': "#A8A153",
-        'Brently': 'gray',
-        'Matthew': "#C5C5C5",
+        'Matthew': "white",
+        'Brently': "#C5C5C5",
         'Del': 'teal',
         'TBD1': '#01C79E',
         'Boz': "#A33E2C",
@@ -70,7 +70,7 @@ def Calculations():
         'Jaden': 'red',
         'Leo': '#ff6060',
         'Jairo': "black",
-        'Randy': 'white'
+        'Randy': "#909090"
     } 
 
     for i in range(len(race_place)):
