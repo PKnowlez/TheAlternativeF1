@@ -20,17 +20,21 @@ def Tab4(colors,index_x,new_df,new_df_FL,new_df_DOTD,new_df_MOT,new_df_Q,new_df_
 
     with st.expander(':red[**SUPER LICENSE PENALTY POINTS**]'):
         license_points = {
-            "Driver":       ['Eddie','Jaden','Nick','Travis','Joshua','Leo'],
-            "Bahrain":      ['1','-','-','-','-','-'],
-            "Miami":        ['-','1','-','-','-','-'],
-            "Spain":        ['-','-','1','-','-','-'],
-            "Mexico":       ['-','-','-','-','-','-'],
-            "Baku":         ['1','-','-','1','-','-'],
-            "Austria (R)":  ['-','-','-','-','-','-'],
-            "Spa":          ['-','-','-','-','1','1'],
-            "Brazil":       ['-','-','-','-','-','-'],
-            "Austria":      ['-','1','-','-','-','-'],
-            "Zandvoort":    ['-','-','-','-','-','-'],
+            "Driver":       ['-'],
+            "W1":           ['-'],
+            "W2":           ['-'],
+            "W3":           ['-'],
+            "W4":           ['-'],
+            "W5":           ['-'],
+            "W6":           ['-'],
+            "W7":           ['-'],
+            "W8":           ['-'],
+            "W9":           ['-'],
+            "W10":          ['-'],
+            "W11":          ['-'],
+            "W12":          ['-'],
+            "W13":          ['-'],
+            "W14":          ['-'],
         }
         driver_totals = [0] * len(license_points["Driver"])
         race_columns = [col for col in license_points.keys() if col != "Driver"]
