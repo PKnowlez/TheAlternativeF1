@@ -9,7 +9,6 @@ def Calculations():
 
     # Drop any rows where the 'Driver' column is empty
     df = df.dropna(subset=['Driver'])
-    print(df)
 
     rookies = {'Grayson', 'TBD1', 'Randy', 'TBD2'}
 
