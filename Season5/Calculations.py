@@ -70,7 +70,7 @@ def Calculations():
         'Jaden': 'red',
         'Leo': '#ff6060',
         'Jairo': "black",
-        'Randy': 'darkgray'
+        'Randy': 'white'
     } 
 
     for i in range(len(race_place)):
