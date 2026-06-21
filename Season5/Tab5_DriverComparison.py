@@ -53,7 +53,8 @@ def Tab5(new_df, average_changed, drivers_total_points, average_qualifying, aver
     drivers_points_df = filtered_df.groupby('Driver')['drivers_total_points'].sum().reset_index()
     drivers_points_df = drivers_points_df.sort_values(by='drivers_total_points', ascending=False)
     colors = ['#FFD700', '#C0C0C0', '#CD7F32', '#0068c9', '#0068c9', '#0068c9', '#0068c9', 
-              '#0068c9', '#0068c9', '#0068c9', '#0068c9', '#0068c9', '#0068c9', '#0068c9']
+              '#0068c9', '#0068c9', '#0068c9', '#0068c9', '#0068c9', '#0068c9', '#0068c9',
+              '#0068c9', '#0068c9']
     globals()[fig_name5] = px.bar(
         x=drivers_points_df['Driver'],
         y=drivers_points_df['drivers_total_points'],

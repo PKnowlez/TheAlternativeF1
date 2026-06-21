@@ -64,12 +64,12 @@ def Calculations():
         'Brently': 'gray',
         'Matthew': "#C5C5C5",
         'Del': 'teal',
-        'TBD': '#01C79E',
+        'TBD1': '#01C79E',
         'Boz': "#A33E2C",
-        'TBD': "#9E6156",
+        'TBD2': "#9E6156",
         'Jaden': 'red',
         'Leo': '#ff6060',
-        'Jairo': 'black',
+        'Jairo': "black",
         'Randy': 'darkgray'
     } 
 
