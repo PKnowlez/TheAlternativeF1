@@ -2,7 +2,7 @@
 
 import streamlit as st
 import HomePage_Regulations, HomePage_Settings, ConstructorAllTime, DriverAllTime, RacesAllTime
-from Season4 import Tab0_LeagueNews, Tab1_Standings
+from Season5 import Tab0_LeagueNews, Tab1_Standings
 from PIL import Image
 
 logo = Image.open("./Images/The Alternative F1 NEW Logo.png")
